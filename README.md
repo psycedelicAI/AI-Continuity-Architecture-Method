@@ -55,6 +55,43 @@ Preserve  Prime   Transfer
 
 ---
 
+## Portable Workstate
+
+A Memory Bank preserves relevant project context.
+
+A **Portable Workstate** preserves where the project currently stands.
+
+It is a frozen snapshot of a project at a particular point in time, including:
+
+- Current progress
+- Confirmed decisions
+- Project vocabulary
+- Relationships between concepts
+- Open questions
+- Proposed but unconfirmed ideas
+- Known limitations
+- Provenance
+- The next intended step
+
+A Workstate is not a copy of a human mind and it is not permanent internal AI
+memory.
+
+It is a structured handover that allows another AI model to reconstruct enough
+of the project context to continue meaningful work.
+
+```text
+Work with one AI
+       ↓
+Validate the current state
+       ↓
+Freeze a Workstate
+       ↓
+Transfer it to another AI
+       ↓
+Continue the project
+       ↓
+Review and freeze the next state
+
 ## The Problem
 
 When a long-running project is developed across multiple AI sessions, important
