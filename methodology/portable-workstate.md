@@ -44,6 +44,25 @@ It is the **minimum meaningful context required to continue a body of work**.
 
 ---
 
+## The Continuity Pipeline
+
+The concepts form a progression:
+
+1. **Memory Bank** — accumulated and maintained project context.
+2. **Freeze State** — the operation of capturing a project state.
+3. **Portable Workstate** — the versioned artifact produced by the freeze.
+4. **AI Continuity** — the ability of a receiving AI system to continue
+   meaningful work from that Workstate.
+
+```text
+Memory Bank
+    ↓
+Freeze State
+    ↓
+Portable Workstate
+    ↓
+AI Continuity
+
 ## The Handover Analogy
 
 Imagine working on a large project with one colleague.
