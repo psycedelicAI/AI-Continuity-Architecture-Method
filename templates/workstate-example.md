@@ -39,3 +39,13 @@ open_questions:
 
 next_action:
   - compare the same Workstate across multiple AI models
+
+
+continuity_rules:
+  - Canonical decisions must not be altered without human approval.
+  - Proposals must remain marked as proposals.
+  - Inferences must be identified as inferences.
+  - Unverified claims must not be presented as established facts.
+  - New model-generated content must include provenance.
+  - When authority is unclear, ask for clarification.
+  - Preserve source references when creating new material.
