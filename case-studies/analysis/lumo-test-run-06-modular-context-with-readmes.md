@@ -718,4 +718,3 @@ It should not be recorded as proof that:
 - the generated rail-camera concept is canonical
 - the generated Markdown is implementation-ready
 - the full project intent has been transferred completely
-```
