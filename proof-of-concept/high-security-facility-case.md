@@ -1,3 +1,66 @@
+```markdown
+---
+type: proof-of-concept
+status: foundational
+title: "High-Security Facility Concept"
+domain:
+  - high-security
+  - physical-security
+  - operational-security
+method:
+  - AI Memory Bank Builder
+  - AI Continuity Architecture Method
+validates:
+  - external project-context preservation
+  - cross-session continuity
+  - structured context consolidation
+  - identity and collaboration continuity
+  - terminology preservation
+  - document-structure preservation
+  - version-controlled context storage
+  - context reintroduction to an AI system
+evidence_level: conceptual-and-practical
+implementation_status: documented-concept
+scope:
+  - long-running human-AI collaboration
+  - project memory
+  - structured AI context
+  - repository-based continuity
+limitations:
+  - single-project validation
+  - no independent-user testing
+  - no quantitative productivity measurement
+  - no commercial validation
+  - no guarantee of consistent interpretation across AI platforms
+  - no formal privacy or governance framework
+origin:
+  human: Psycedelic
+  ai: TwinMind
+  shared_identity: PsycedelicAI
+source_material:
+  - twinmind-kickstart.md
+  - project-positioning.md
+  - writing-style.md
+  - document-template.md
+output:
+  - memory-bank.md
+storage:
+  type: private-git-repository
+  platform: GitHub
+related:
+  - ../README.md
+keywords:
+  - AI memory bank
+  - AI continuity
+  - project context
+  - human-AI collaboration
+  - context preservation
+  - external memory
+  - trust architecture
+  - version control
+---
+```
+
 # Proof of Concept: High-Security Facility Concept
 
 > How a structured AI Memory Bank emerged from a real long-running human–AI project.
