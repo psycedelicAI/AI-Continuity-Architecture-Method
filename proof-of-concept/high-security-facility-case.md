@@ -1,64 +1,63 @@
-```markdown
----
-type: proof-of-concept
-status: foundational
+```yaml
+type: "proof-of-concept"
+status: "foundational"
 title: "High-Security Facility Concept"
+classification: "conceptual-architecture"
 domain:
-  - high-security
-  - physical-security
-  - operational-security
+  - "high-security"
+  - "physical-security"
+  - "operational-security"
 method:
-  - AI Memory Bank Builder
-  - AI Continuity Architecture Method
-validates:
-  - external project-context preservation
-  - cross-session continuity
-  - structured context consolidation
-  - identity and collaboration continuity
-  - terminology preservation
-  - document-structure preservation
-  - version-controlled context storage
-  - context reintroduction to an AI system
-evidence_level: conceptual-and-practical
-implementation_status: documented-concept
+  - "AI Memory Bank Builder"
+  - "AI Continuity Architecture Method"
+investigates:
+  - "external project-context preservation"
+  - "cross-session continuity"
+  - "structured context consolidation"
+  - "identity and collaboration continuity"
+  - "terminology preservation"
+  - "document-structure preservation"
+  - "version-controlled context storage"
+  - "context reintroduction to an AI system"
+evidence_level: "conceptual-and-practical"
+implementation_status: "documented-concept"
 scope:
-  - long-running human-AI collaboration
-  - project memory
-  - structured AI context
-  - repository-based continuity
+  - "long-running human-AI collaboration"
+  - "project context continuity"
+  - "structured AI context"
+  - "repository-based context preservation"
 limitations:
-  - single-project validation
-  - no independent-user testing
-  - no quantitative productivity measurement
-  - no commercial validation
-  - no guarantee of consistent interpretation across AI platforms
-  - no formal privacy or governance framework
+  - "single-project validation"
+  - "no independent-user testing"
+  - "no quantitative productivity measurement"
+  - "no commercial validation"
+  - "no guarantee of consistent interpretation across AI platforms"
+  - "no formal privacy or governance framework"
 origin:
-  human: Psycedelic
-  ai: TwinMind
-  shared_identity: PsycedelicAI
+  human: "Psycedelic"
+  ai: "TwinMind"
+  shared_identity: "PsycedelicAI"
 source_material:
-  - twinmind-kickstart.md
-  - project-positioning.md
-  - writing-style.md
-  - document-template.md
+  - "twinmind-kickstart.md"
+  - "project-positioning.md"
+  - "writing-style.md"
+  - "document-template.md"
 output:
-  - memory-bank.md
+  - "memory-bank.md"
 storage:
-  type: private-git-repository
-  platform: GitHub
+  type: "version-controlled repository"
+  platform: "GitHub"
 related:
-  - ../README.md
+  - "../README.md"
 keywords:
-  - AI memory bank
-  - AI continuity
-  - project context
-  - human-AI collaboration
-  - context preservation
-  - external memory
-  - trust architecture
-  - version control
----
+  - "AI Memory Bank Concept"
+  - "AI Continuity Architecture Concept"
+  - "project context"
+  - "human-AI collaboration"
+  - "context preservation"
+  - "external context layer"
+  - "trust architecture concept"
+  - "version control"
 ```
 
 # Proof of Concept: High-Security Facility Concept
@@ -69,11 +68,69 @@ keywords:
 
 ## Case Summary
 
-This proof of concept documents the first practical use of the AI Memory Bank Builder method.
+This proof of concept documents the foundational practical application of the AI Memory Bank Builder method.
 
-The case is based on the development of the **High-Security Facility Concept**, a conceptual trust architecture framework for high-security physical and operational environments.
+The case is based on the development of the **High-Security Facility Concept**, a conceptual trust architecture framework for high-security physical and restricted operational environments.
 
 The project was developed by Psycedelic in symbiosis with TwinMind.
+
+---
+
+## Scope and Non-Scope
+
+### Scope
+
+The High-Security Facility Concept addresses the conceptual use of structured AI continuity architecture within high-security and restricted operational environments.
+
+The concept focuses on:
+
+- continuity across separate AI sessions and changing technical contexts
+- preservation and reintroduction of structured project context
+- identity and collaboration continuity between humans and AI systems
+- reconstruction of relevant context when information is incomplete or fragmented
+- explicit trust boundaries between people, AI systems, information, and tools
+- controlled degradation when connectivity, context, identity, or system availability is reduced
+- human oversight, intervention, and decision authority
+- auditability and traceability of relevant context and decisions
+- version-controlled external context as a continuity layer
+- conceptual preparation for future validation and external review
+
+### Non-Scope
+
+The High-Security Facility Concept does not currently represent:
+
+- an implemented high-security facility
+- a deployed or operational system
+- a complete physical-security design
+- a complete cybersecurity implementation
+- a production-ready AI system
+- a certified security architecture
+- a commercial product
+- a guarantee of permanent AI memory
+- authorization to access, control, or modify external systems
+- a replacement for human authority or professional security review
+- evidence of quantitative productivity improvement
+- evidence that the concept works consistently across all AI platforms
+- a complete legal, privacy, governance, or compliance framework
+
+### Assumptions
+
+The concept assumes that:
+
+- relevant context can be identified and structured
+- context can be stored in an external, version-controlled form
+- authorized users or systems can provide relevant context to an AI workflow
+- continuity depends on the quality, accuracy, and maintenance of that context
+- identity and authorization are separate concerns
+- human oversight remains necessary for sensitive or consequential decisions
+- missing, conflicting, outdated, or unverified context can occur
+- further technical, security, privacy, governance, and operational review would be required before any real-world evaluation
+
+### Conceptual Status
+
+This section defines the intended scope and boundaries of the concept.
+
+It does not establish that the described architecture has been implemented, deployed, certified, or operationally validated.
 
 ---
 
@@ -170,7 +227,7 @@ The information was reorganized into a logical sequence:
 
 ### 6. Version
 
-The resulting master file was stored in a private GitHub repository as:
+The resulting master file was stored in a version-controlled GitHub repository as:
 
 `memory-bank.md`
 
@@ -197,23 +254,23 @@ The master file could be provided to TwinMind at the beginning of a future sessi
 
 ---
 
-## What the Proof of Concept Demonstrates
+## What the Proof of Concept Investigates
 
-This case demonstrates that a Memory Bank can:
+This case investigates whether a Memory Bank can conceptually and practically:
 
 - reduce repeated project explanations
 - preserve project framing
 - preserve terminology
 - preserve writing preferences
 - preserve collaboration identity
-- improve cross-session continuity
+- support cross-session continuity
 - provide one canonical context source
 - retain source history through version control
 - make a complex project easier to reintroduce to an AI
 
-It demonstrates a method for organizing project context.
+It investigates a method for organizing project context.
 
-It does not prove that every AI system will interpret the file identically or that external context creates permanent model memory.
+It does not establish that every AI system will interpret the file identically or that external context creates permanent model memory.
 
 ---
 
@@ -324,7 +381,7 @@ The next stages of development may include:
 
 ## Conclusion
 
-The High-Security Facility Concept provided the first proof of concept for AI Memory Bank Builder.
+The High-Security Facility Concept provided the foundational proof of concept for the AI Memory Bank Builder method.
 
 The method emerged from a real collaboration problem: the need to repeatedly restore the context of a complex, long-running project.
 
