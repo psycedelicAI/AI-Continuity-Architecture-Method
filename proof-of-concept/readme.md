@@ -16,7 +16,7 @@ represent production implementations or operational systems.
 ### High-Security Facility Concept
 
 **File:** [high-security-facility-case.md](./high-security-facility-case.md)  
-**Status:** Foundational PoC  
+**Status:** Foundational proof of concept  
 **Classification:** Conceptual architecture  
 **Domain:** High-security and restricted operational environments
 
@@ -29,13 +29,13 @@ It explores how continuity may be preserved without assuming
 unrestricted access, permanent connectivity, or a single uninterrupted
 runtime instance.
 
-The High-Security Facility Concept is not an implemented or operational
-facility. It is a documented concept and foundational proof of concept
-for further internal validation and possible future external review.
+The High-Security Facility Concept is a documented concept and
+foundational proof of concept. It does not represent an implemented,
+deployed, or operational facility.
 
-## What the PoCs Investigate
+## What the PoC Investigates
 
-The proof-of-concept cases investigate:
+The proof of concept investigates:
 
 - identity continuity across sessions and system boundaries
 - preservation and reconstruction of relevant context
@@ -48,36 +48,37 @@ The proof-of-concept cases investigate:
 
 ## Interpretation
 
-The cases are not claims that a complete production system already
-exists.
+This proof of concept is not a claim that a complete production system
+already exists.
 
-They are structured demonstrations of how the architecture may be
+It is a structured demonstration of how the architecture may be
 organized, what assumptions it requires, and which properties may need
 to be preserved across changing technical environments.
 
-The cases also serve as reference cases for the method. Each case
-applies the underlying continuity principles to a specific context
-without implying that the concept has been implemented, deployed, or
-operationally validated.
+The case applies the underlying continuity principles to a specific
+context. It should be understood as a conceptual reference case for
+the method, not as an implementation, deployment, or operational
+validation.
 
 ## Relationship to the Method
 
-The cases in this directory apply the principles described in the main
-architecture documentation.
+This case applies principles described in the main architecture
+documentation.
 
-They are intended to help evaluate:
+It is intended to help evaluate:
 
-1. whether the architecture remains coherent in different environments;
+1. whether the architecture remains coherent in a high-security
+   environment;
 2. which components may be context-independent;
 3. which controls may depend on the operational domain; and
-4. where additional implementation, testing, or validation may be required.
+4. where additional implementation, testing, or validation may be
+   required.
 
 ## Status and Limitations
 
-The proof-of-concept cases are conceptual unless explicitly stated
-otherwise.
+This proof of concept is conceptual unless explicitly stated otherwise.
 
-They do not by themselves establish:
+It does not establish:
 
 - implementation
 - deployment
