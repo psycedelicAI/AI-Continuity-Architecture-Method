@@ -57,8 +57,10 @@ source_material:
   - "writing-style.md"
   - "document-template.md"
 
-output:
-  - "memory-bank.md"
+The resulting master file was stored in the private, version-controlled
+`TwinMind-Bank` repository as:
+
+`memory-bank.md`
 
 storage:
   type: "private version-controlled repository"
