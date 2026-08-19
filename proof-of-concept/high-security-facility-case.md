@@ -623,6 +623,276 @@ Any future real-world evaluation would require qualified technical,
 security, privacy, governance, and operational review.
 ---
 
+## Internal Concept Validation Criteria
+
+The High-Security Facility Concept should be reviewed against explicit
+criteria before it is presented for external review.
+
+This review assesses conceptual coherence, clarity, consistency,
+traceability, and completeness. It is not a technical certification,
+operational test, security assessment, or confirmation that the concept is
+ready for deployment.
+
+### Conceptual Coherence
+
+Review whether:
+
+- the core problem is clearly defined
+- the concept addresses the stated problem
+- the architectural principles support the stated purpose
+- the main sections are internally consistent
+- the conclusions follow from the described material
+- assumptions are distinguishable from observations
+
+### Scope and Boundaries
+
+Review whether:
+
+- scope and non-scope are explicit
+- assumptions are documented
+- trust boundaries are identified
+- physical, digital, human, and organizational boundaries are distinguished
+- implementation claims are avoided
+- the document remains consistent with its conceptual status
+
+### Continuity Logic
+
+Review whether:
+
+- identity continuity is defined
+- relevant context preservation is explained
+- state reconstruction is addressed
+- session transitions are considered
+- human–AI handoff is described
+- continuity does not depend on unrestricted access or permanent connectivity
+- uncertainty is visible when context is incomplete or conflicting
+
+### Failure and Degradation Handling
+
+Review whether:
+
+- loss of connectivity is addressed
+- missing context is addressed
+- conflicting context is addressed
+- identity uncertainty is addressed
+- partial system failure is addressed
+- loss of human availability is addressed
+- degraded operation is defined
+- recovery conditions are described
+- transitions between operating modes are visible
+
+### Security and Trust
+
+Review whether:
+
+- trust boundaries are clearly described
+- identity is separated from authorization
+- recommendation is separated from approval and execution
+- external information is treated cautiously
+- human oversight is included
+- sensitive actions require appropriate review
+- auditability and traceability are considered
+
+### Terminology and Positioning
+
+Review whether:
+
+- “concept” is used consistently
+- “proof of concept” is used accurately
+- conceptual claims are separated from observed results
+- implementation, deployment, and operational language is avoided unless supported
+- the document does not imply certification or production readiness
+- the High-Security Facility Concept is not described as an operational facility
+
+### Documentation Quality
+
+Review whether:
+
+- the document is understandable without verbal explanation
+- headings follow a logical order
+- terminology is used consistently
+- limitations remain visible
+- source material and assumptions are traceable
+- links and references are correct
+- the metadata accurately reflects the document
+
+### Reproducibility of the Method
+
+Review whether:
+
+- the consolidation process can be understood by another person
+- source material is identified
+- classification is explainable
+- deduplication is explainable
+- the resulting Memory Bank structure can be recreated conceptually
+- the method could be applied to another long-running project
+
+## Internal Review Questions
+
+The internal review should ask:
+
+1. Can an external reader understand the concept without additional verbal
+   explanation?
+2. Can the reader distinguish concept, proof of concept, and implementation?
+3. Are the core architectural principles identifiable?
+4. Are the main assumptions visible?
+5. Are important uncertainties acknowledged?
+6. Are failure and degradation scenarios included?
+7. Is human authority clearly separated from AI assistance?
+8. Are there contradictions between sections?
+9. Could any statement be interpreted as an unsupported implementation claim?
+10. What information would an external reviewer still need?
+
+## Review Result Categories
+
+Each criterion should receive one of the following results:
+
+- `Pass`
+- `Pass with clarification`
+- `Needs revision`
+- `Not yet assessable`
+
+## Findings
+
+Record findings under the following categories:
+
+- strengths
+- unclear areas
+- missing information
+- terminology issues
+- security concerns
+- governance concerns
+- unsupported assumptions
+- recommended changes
+
+## Conceptual Status
+
+This activity assesses the internal coherence and documentation quality of
+the concept.
+
+It does not validate a real facility, deployed system, production
+architecture, security certification, commercial opportunity, or operational
+performance.
+
+## Acceptance Criteria
+
+- [ ] Internal validation areas are documented.
+- [ ] Scope and non-scope are included.
+- [ ] Continuity logic is included.
+- [ ] Failure and degradation handling is included.
+- [ ] Security, trust, and human oversight are included.
+- [ ] Terminology and positioning are reviewed.
+- [ ] Documentation quality is included.
+- [ ] Reproducibility is considered.
+- [ ] Review result categories are defined.
+- [ ] The activity is clearly described as conceptual validation.
+- [ ] No implementation or operational claims are made.
+---
+
+## External Review Preparation
+
+The High-Security Facility Concept may be presented to an external partner
+for independent review at a later stage.
+
+This section defines the possible review material and questions. It does not
+mean that an external review has taken place or that the concept has been
+approved, certified, validated, or recommended for implementation.
+
+### Purpose of External Review
+
+A possible external review would assess:
+
+- conceptual coherence
+- relevance to high-security and restricted environments
+- technical plausibility
+- security assumptions
+- trust boundaries
+- continuity logic
+- failure and degradation handling
+- human oversight
+- privacy and governance requirements
+- possible implementation challenges
+- information missing from the current concept
+
+### Proposed Review Package
+
+A future review package may contain:
+
+1. this High-Security Facility Concept case document;
+2. the proof-of-concept README;
+3. a short concept summary;
+4. the documented scope and non-scope;
+5. the core architectural principles;
+6. the trust-boundary description;
+7. the failure and degradation scenarios;
+8. the internal concept validation criteria;
+9. the known limitations; and
+10. specific questions for the external reviewer.
+
+The package should contain only the information necessary for the intended
+review.
+
+### Proposed Review Questions
+
+An external reviewer may be asked:
+
+1. Is the concept internally coherent?
+2. Is the described problem relevant to high-security environments?
+3. Are the trust boundaries sufficiently clear?
+4. Are the continuity assumptions realistic?
+5. Are the failure and degradation scenarios sufficiently addressed?
+6. Which claims require technical evidence?
+7. Which controls would be required before any future pilot?
+8. Which privacy and governance questions must be answered?
+9. What would be required to define a safe and limited evaluation?
+10. What are the strongest reasons not to proceed?
+11. Which parts of the concept may be reusable in other environments?
+12. What information is missing for an informed assessment?
+
+### Reviewer Context
+
+Before sharing the material, the following should be considered:
+
+- whether an NDA is appropriate
+- whether personal or confidential information should be removed
+- whether repository access should be restricted
+- whether the reviewer needs the complete repository or selected documents
+- whether the reviewer’s role and organization are verified
+- whether feedback may be published
+- how confidential feedback should be stored
+
+### Expected Review Output
+
+A written review should, where possible, identify:
+
+- overall assessment
+- strengths
+- unclear areas
+- missing information
+- technical concerns
+- security concerns
+- privacy concerns
+- governance concerns
+- implementation risks
+- recommended next steps
+- recommendation to continue, revise, restrict, pause, or terminate
+
+### Review Status
+
+External review has not yet taken place.
+
+No external partner has approved, certified, validated, or recommended the
+concept unless this is documented separately and supported by explicit
+evidence.
+
+### Conceptual Status
+
+Preparing an external review package does not establish implementation
+readiness, operational validity, commercial viability, or security
+certification.
+
+It only prepares the concept for possible independent assessment.
+
 ## The Original Problem
 
 The project developed over multiple AI sessions and gradually became more
