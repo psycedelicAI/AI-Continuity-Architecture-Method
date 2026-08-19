@@ -428,6 +428,201 @@ Future technical, physical-security, cybersecurity, privacy, governance,
 and operational review would be required before any real-world evaluation.
 ---
 
+## Failure and Degradation Scenarios
+
+The High-Security Facility Concept considers how continuity may be affected
+when communication, context, identity, systems, policies, or human
+availability become limited or unreliable.
+
+These scenarios describe conceptual conditions and possible responses. They
+do not represent implemented recovery procedures, tested controls, or
+operational validation.
+
+### Loss of Connectivity
+
+Relevant communication or network connectivity becomes unavailable,
+restricted, or unreliable.
+
+The concept should consider:
+
+- which relevant context remains available
+- how new information is received or delayed
+- how outdated context is identified
+- whether limited or read-only continuity is possible
+- how synchronization is handled after recovery
+- when human review or intervention is required
+
+### Missing Context
+
+Required project or operational context is unavailable or incomplete.
+
+The concept should consider:
+
+- how missing information is identified
+- which activities must be paused
+- which limited functions may continue
+- how uncertainty is communicated
+- how missing context is restored
+- how assumptions made during the gap are recorded
+
+### Conflicting Context
+
+Two or more sources contain contradictory information.
+
+The concept should consider:
+
+- how the conflict is detected
+- how source reliability is assessed
+- which source, if any, has priority
+- whether human review is required
+- how the conflict and resulting decision are recorded
+- how superseded information is marked
+
+### Identity Uncertainty
+
+The identity, role, or authority of a participant cannot be verified with
+sufficient confidence.
+
+The concept should consider:
+
+- whether continuity may continue in a restricted or read-only form
+- which actions must be prohibited
+- how identity is re-established
+- how impersonation or identity confusion is handled
+- what events must be logged
+- when human intervention is required
+
+### Loss of Human Availability
+
+An authorized human operator, reviewer, or decision-maker becomes
+unavailable.
+
+The concept should consider:
+
+- which activities may continue
+- which activities must stop
+- whether an authorized delegated role exists
+- how escalation is performed
+- how pending decisions are preserved
+- how decisions are reviewed after human availability is restored
+
+### Corrupted or Untrusted State
+
+Stored context or relevant state may be incomplete, altered, corrupted, or
+compromised.
+
+The concept should consider:
+
+- how the issue is detected
+- whether a previous trusted version is available
+- which information is isolated or quarantined
+- how recovery is initiated
+- which actions are suspended
+- how the integrity decision is documented
+
+### Policy or Authorization Change
+
+Permissions, policies, roles, or operating conditions change while
+continuity is being maintained.
+
+The concept should consider:
+
+- how policy changes are identified
+- how previously valid permissions are re-evaluated
+- whether active activities must be paused
+- how obsolete authorization is handled
+- who confirms the updated state
+- how the change is recorded
+
+### Partial System Failure
+
+One component or subsystem becomes unavailable while other components
+remain available.
+
+The concept should consider:
+
+- which functions are affected
+- whether restricted continuity is possible
+- how dependencies are identified
+- how fallback behavior is controlled
+- which actions are prohibited
+- how recovery is verified
+
+### Compromised External Information
+
+Information from an external system, partner, tool, or source may be
+manipulated, unreliable, or incorrectly interpreted.
+
+The concept should consider:
+
+- how external information is classified
+- whether it may enter trusted context
+- what verification is required
+- whether the information should be isolated
+- how its use is recorded
+- when human review is required
+
+### Emergency or Degraded Mode
+
+The environment enters a condition requiring restricted continuity or
+additional human control.
+
+The concept should consider:
+
+- how degraded or emergency mode is identified
+- who may authorize the transition
+- which functions remain available
+- which actions are prohibited
+- how the transition is recorded
+- how normal operation may be restored
+- who confirms the return to normal operation
+
+## Required Response Properties
+
+For each failure or degradation scenario, the concept should consider:
+
+- detection
+- classification
+- containment
+- permitted continuity
+- restricted actions
+- human oversight
+- logging and traceability
+- recovery conditions
+- return to normal operation
+- criteria for escalation or termination
+
+## Degraded Continuity
+
+Degraded continuity should not be treated as equivalent to normal
+operation.
+
+When relevant context, identity, connectivity, system availability, or human
+oversight is reduced, the concept should make the degraded condition
+visible and apply appropriate restrictions.
+
+Continuity may therefore be:
+
+- limited
+- read-only
+- delayed
+- subject to additional review
+- suspended
+- terminated until recovery
+
+## Conceptual Status
+
+The scenarios and responses described in this section represent conceptual
+considerations.
+
+They are not implemented recovery procedures, operational emergency plans,
+security controls, or evidence that the concept has been tested in a real
+high-security environment.
+
+Any future real-world evaluation would require qualified technical,
+security, privacy, governance, and operational review.
+---
+
 ## The Original Problem
 
 The project developed over multiple AI sessions and gradually became more
