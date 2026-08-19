@@ -61,8 +61,9 @@ output:
   - "memory-bank.md"
 
 storage:
-  type: "version-controlled repository"
+  type: "private version-controlled repository"
   platform: "GitHub"
+  repository: "TwinMind-Bank"
 
 related:
   - "./readme.md"
