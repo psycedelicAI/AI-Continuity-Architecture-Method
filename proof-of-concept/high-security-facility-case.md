@@ -271,6 +271,163 @@ The principles should remain consistent with:
 
 ---
 
+## Trust Boundaries
+
+The High-Security Facility Concept treats trust boundaries as conceptual
+limits between people, identities, information, AI systems, tools,
+operational environments, and decisions.
+
+These boundaries describe where trust, access, authority, or information
+must be verified. They do not represent implemented security controls,
+deployed infrastructure, or operational validation.
+
+### Human–AI Boundary
+
+The concept distinguishes between:
+
+- human intent
+- AI interpretation
+- AI-generated analysis
+- AI-generated recommendations
+- human review
+- human decisions
+- authorized human actions
+
+AI output must not automatically be treated as human authorization.
+
+### Identity Boundary
+
+The concept distinguishes between:
+
+- verified identity
+- claimed identity
+- remembered identity
+- inferred identity
+- delegated identity
+- unknown identity
+- conflicting identity
+
+Identity continuity does not replace identity verification. Uncertain or
+conflicting identity should affect the level of permitted continuity and
+access.
+
+### Context Boundary
+
+The concept distinguishes between:
+
+- trusted project context
+- newly provided context
+- inferred context
+- unverified context
+- outdated context
+- superseded context
+- conflicting context
+
+Stored context should not automatically be treated as current,
+authoritative, or complete.
+
+### System Boundary
+
+The concept distinguishes between:
+
+- context and memory storage
+- AI processing
+- external tools
+- operational systems
+- monitoring systems
+- administrative systems
+- recovery systems
+
+A system receiving context does not automatically receive permission to
+modify another system.
+
+### Physical–Digital Boundary
+
+The concept distinguishes between:
+
+- the physical facility
+- digital infrastructure
+- communication channels
+- access-control systems
+- monitoring systems
+- external networks
+
+A digital continuity layer must not be assumed to provide physical
+security by itself.
+
+### Internal–External Boundary
+
+The concept distinguishes between:
+
+- internal operations
+- authorized external parties
+- partner organizations
+- service providers
+- external AI systems
+- public sources
+- untrusted sources
+
+External information and systems require explicit validation and
+authorization before being treated as trusted context.
+
+### Decision Boundary
+
+The concept distinguishes between:
+
+- information retrieval
+- analysis
+- recommendation
+- approval
+- authorization
+- execution
+- emergency intervention
+
+The ability to provide information or a recommendation does not imply
+authority to approve or execute an action.
+
+### Continuity and Recovery Boundary
+
+The concept distinguishes between:
+
+- normal operation
+- degraded operation
+- restricted operation
+- recovery
+- emergency mode
+- restored operation
+
+Transitions between these states should be visible, reviewable, and subject
+to defined conditions rather than occurring silently.
+
+## Boundary Evaluation Questions
+
+For each trust boundary, the concept should consider:
+
+- What is being protected?
+- Who or what is trusted?
+- Who or what is not trusted?
+- What information may cross the boundary?
+- What information must remain restricted?
+- What action is permitted?
+- What authorization is required?
+- What verification is required?
+- What should be logged?
+- What happens if the boundary cannot be verified?
+- What human intervention is required?
+- How is the boundary restored after a failure?
+
+## Conceptual Status
+
+The trust boundaries described in this section define intended
+architectural distinctions.
+
+They are not implemented access controls, security certifications,
+operational procedures, or evidence of security in a real facility.
+
+Future technical, physical-security, cybersecurity, privacy, governance,
+and operational review would be required before any real-world evaluation.
+---
+
 ## The Original Problem
 
 The project developed over multiple AI sessions and gradually became more
