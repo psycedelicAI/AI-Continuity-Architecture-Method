@@ -1,0 +1,5 @@
+LICENSE linguist-language=Text
+*.md linguist-language=Markdown
+*.yaml linguist-language=YAML
+*.yml linguist-language=YAML
+*.json linguist-language=JSON
