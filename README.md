@@ -1,8 +1,8 @@
 # AI Continuity Architecture Method
 
 > A practical method for building structured external context systems that
-> preserve project identity, meaning, and working continuity across sessions,
-> platforms, and AI model boundaries.
+> preserve project identity, meaning, authority, and working continuity across
+> sessions, platforms, and AI model boundaries.
 
 ---
 
@@ -19,11 +19,11 @@ important context can become fragmented. This may include:
 - previous decisions;
 - canonical terminology;
 - document relationships;
-- writing and communication preferences;
-- open questions;
 - current project state;
+- open questions;
 - human intent;
-- the reasoning behind important design choices.
+- the reasoning behind important design choices;
+- the difference between confirmed decisions and AI-generated proposals.
 
 A Memory Bank provides a structured way to preserve and reuse this context.
 
@@ -37,9 +37,9 @@ before or during continued work.
 ## Core Definition
 
 > An AI Continuity Architecture is a structured external context system that
-> preserves the information, relationships, decisions, terminology, and intent
-> required to continue meaningful work across separate AI sessions, platforms,
-> and model boundaries.
+> preserves the information, relationships, decisions, terminology, authority,
+> and intent required to continue meaningful work across separate AI sessions,
+> platforms, and model boundaries.
 
 A Memory Bank is one practical implementation of this architecture.
 
@@ -87,7 +87,7 @@ Without a structured continuity layer, each new session may require:
 - correction of misunderstandings;
 - re-establishment of terminology;
 - recovery of the project's wider direction;
-- rebuilding the relationship between separate documents.
+- rebuilding relationships between separate documents.
 
 This creates friction and can gradually weaken project continuity.
 
@@ -109,13 +109,61 @@ It is a structured and maintained context system that helps an AI understand:
 - how future work should continue;
 - which uncertainties and contradictions remain unresolved.
 
-The goal is not to make an AI remember everything indiscriminately.
+The goal is not maximum memory.
 
-The goal is to preserve the context that is important for consistent, meaningful,
-and efficient collaboration.
+The goal is useful continuity.
 
-> The objective is not maximum memory.  
-> The objective is useful continuity.
+> Preserve the context that matters.
+>
+> Do not preserve everything indiscriminately.
+
+---
+
+## Context Governance
+
+The method treats context as something that must be governed, not merely
+stored.
+
+Traditional AI guardrails often focus on model behaviour:
+
+```text
+What may the AI do?
+```
+
+Continuity guardrails focus on context behaviour:
+
+```text
+What may the AI assume?
+What should it trust?
+What is current?
+Who authorized it?
+What should be transferred?
+What should remain private?
+```
+
+Before material is treated as project context, the system should consider:
+
+- where it came from;
+- who created or authorized it;
+- what status it has;
+- which version it belongs to;
+- whether it is current or historical;
+- whether it has been verified;
+- whether it is relevant to the current task;
+- whether it should remain private;
+- whether it requires human review.
+
+The Memory Bank may support continuity, but it does not automatically redefine
+reality.
+
+A receiving AI must not treat every sentence in a Memory Bank, Workstate, or
+compiled context package as equally authoritative.
+
+> Context can be transferred without transferring authority.
+>
+> Information can be preserved without making it true.
+>
+> Continuity requires governance.
 
 ---
 
@@ -156,7 +204,6 @@ Compilation
 
 Compilation may include:
 
-- context selection;
 - relevance filtering;
 - authority checking;
 - provenance preservation;
@@ -164,17 +211,9 @@ Compilation may include:
 - version identification;
 - separation of current and historical material;
 - separation of confirmed and proposed content;
-- assembly of the final artifact;
-- human review where required.
-
-The result depends on:
-
-- the source material available;
-- the purpose of the compilation;
-- the selected context;
-- authority and provenance rules;
-- the intended receiving system;
-- the level of human review.
+- privacy filtering;
+- human review;
+- assembly of the final artifact.
 
 > The Memory Bank is the source.
 >
@@ -184,9 +223,7 @@ The result depends on:
 
 ---
 
-## Current State, Freeze State, and Portable Workstate
-
-### Current State
+## Current State
 
 A Current State is a compiled representation of the active and
 change-sensitive condition of a project.
@@ -212,7 +249,14 @@ Next actions
 Current State
 ```
 
-### Freeze State
+A Current State should be updated as the active project condition changes.
+
+It does not replace historical records, the wider Memory Bank, or a
+Portable Workstate.
+
+---
+
+## Freeze State
 
 A Freeze State is a compiled and human-reviewed snapshot captured at a defined
 point in time.
@@ -247,7 +291,19 @@ Human review
 Freeze State
 ```
 
-### Portable Workstate
+A Freeze State does not:
+
+- make every included statement permanently true;
+- turn proposals into decisions;
+- preserve every conversation;
+- guarantee perfect transfer;
+- eliminate uncertainty;
+- replace human review;
+- replace source verification.
+
+---
+
+## Portable Workstate
 
 A Portable Workstate is a compiled and versioned artifact produced from
 selected Memory Bank material.
@@ -255,7 +311,7 @@ selected Memory Bank material.
 It may be created through a Freeze State, but it is not necessarily identical to
 a complete Freeze State.
 
-It is designed to transfer the relevant state of a body of work between:
+It is designed to transfer relevant project state between:
 
 - AI sessions;
 - AI models;
@@ -279,6 +335,7 @@ A Portable Workstate may include:
 - open questions;
 - known limitations;
 - provenance;
+- authority boundaries;
 - continuity rules;
 - next intended actions;
 - change summary.
@@ -300,164 +357,40 @@ Required relationships
 Portable Workstate
 ```
 
----
-
-## Memory Bank as a Priming Layer
-
-A Memory Bank can be provided to an AI model at the beginning of a new session to
-establish the context required for meaningful work.
-
-It may function as:
-
-- a continuity layer between sessions;
-- a reusable project-context repository;
-- a priming document for new AI conversations;
-- a transfer layer between different AI models;
-- a reference structure for human collaborators;
-- a bridge between different AI platforms and workflows.
-
-The purpose of priming is not to control the model completely.
-
-It is to provide a structured starting point so that the model can interpret a
-new task within the correct project context.
+> A Workstate asks: “Where are we now?”
 
 ---
 
-## Continuity Does Not Mean Identical Output
+## AI Continuity
 
-The same Memory Bank may produce different results on different models or
-platforms.
+AI Continuity is the ability of a receiving AI system to reconstruct enough
+relevant project state to continue meaningful work without starting from zero.
 
-Variation may be caused by differences in:
+The receiving AI does not need to become the original AI.
 
-- model architecture;
-- training data;
-- context-window size;
-- instruction-following behaviour;
-- system and developer instructions;
-- safety policies;
-- retrieval behaviour;
-- file-handling mechanisms;
-- platform design;
-- interpretation of ambiguous language.
+It does not need to reproduce identical wording, style, or conclusions.
 
-A Memory Bank is a shared contextual foundation, not a guarantee of identical
-output.
+Continuity is present when the receiving AI can recover relevant:
 
-> Continuity does not require identical answers.  
-> It requires preservation of meaning, intent, and relevant project context.
+- project identity;
+- project purpose;
+- current state;
+- important decisions;
+- terminology;
+- conceptual relationships;
+- unresolved questions;
+- authority boundaries;
+- next intended actions.
 
-Different models can be used as separate interpretation layers. Their outputs
-can be compared for:
+> AI Continuity asks: “Can meaningful work continue from this state?”
 
-- preserved meaning;
-- missing context;
-- terminology drift;
-- contradictions;
-- unsupported assumptions;
-- new insights;
-- differences in prioritization.
-
----
-
-## Memory Bank Layers
-
-A complete Memory Bank may be organized into six connected layers.
-
-### 1. Identity
-
-Who is involved in the project, and what relationship defines the
-collaboration?
-
-This may include:
-
-- human identity;
-- AI identity;
-- collaboration identity;
-- project ownership;
-- communication language;
-- relevant working relationship.
-
-### 2. Project Context
-
-What is the project?
-
-This may include:
-
-- purpose;
-- scope;
-- intended audience;
-- project positioning;
-- current direction;
-- what the project is and is not.
-
-### 3. Structure
-
-How is the project organized?
-
-This may include:
-
-- core concepts;
-- document relationships;
-- repository structure;
-- canonical sources;
-- vocabulary;
-- architecture models;
-- cross-references;
-- dependencies.
-
-### 4. Working Method
-
-How should the AI participate in the work?
-
-This may include:
-
-- response preferences;
-- writing style;
-- document templates;
-- review expectations;
-- formatting rules;
-- decision-making boundaries;
-- uncertainty handling;
-- fact-versus-interpretation rules.
-
-### 5. Intent and Meaning
-
-Why does the project exist?
-
-This layer preserves:
-
-- human purpose;
-- values;
-- practical experience;
-- recurring design intuitions;
-- the problem the project is trying to solve;
-- what the project is trying to protect;
-- the reasoning behind important principles;
-- the project's deeper human meaning.
-
-### 6. Continuity and Maintenance
-
-How should the context be maintained and reused?
-
-This may include:
-
-- update rules;
-- versioning;
-- review dates;
-- change logs;
-- conflict resolution;
-- archiving;
-- priming procedures;
-- drift detection;
-- cross-model testing;
-- privacy handling.
+AI Continuity should be evaluated rather than assumed.
 
 ---
 
 ## Information, Structure, and Intent
 
-A useful way to understand continuity is:
+A mature continuity system should preserve three connected layers:
 
 ```text
 Information
@@ -477,148 +410,93 @@ How it relates
 Why it matters
 ```
 
-A model may receive project information without understanding its structure.
+### Information
 
-It may understand the structure without understanding the project's intent.
+What exists:
 
-A mature continuity system should therefore attempt to preserve all three layers.
+- facts;
+- documents;
+- decisions;
+- terminology;
+- events;
+- conditions;
+- source material.
 
----
+### Structure
 
-## Building and Maintaining a Memory Bank
+How material relates:
 
-The method follows a lifecycle:
+- relationships;
+- dependencies;
+- categories;
+- sequences;
+- priorities;
+- document connections;
+- current state.
 
-```text
-Identify
-   ↓
-Collect
-   ↓
-Classify
-   ↓
-Consolidate
-   ↓
-Validate
-   ↓
-Compile
-   ↓
-Prime
-   ↓
-Maintain
-   ↓
-Audit
-   ↓
-Archive and repeat
-```
+### Intent
 
-### Identify
+Why the work matters:
 
-Determine which information must survive between sessions.
+- why the project exists;
+- what problem it addresses;
+- what the human is trying to protect;
+- why important principles matter;
+- what the project should avoid becoming;
+- what kind of future the project is trying to make possible.
 
-### Collect
+Information without structure may be difficult to use.
 
-Gather relevant information from conversations, documents, decision records,
-notes, repositories, meeting summaries, templates, and architecture models.
-
-Each item should retain its source whenever possible.
-
-### Classify
-
-Organize information according to purpose, stability, sensitivity, confidence,
-source, current status, and lifecycle.
-
-### Consolidate
-
-Combine related information into clear sections while preserving distinctions
-between decisions, ideas, historical material, and unresolved questions.
-
-### Validate
-
-Review the consolidated Memory Bank for accuracy, relevance, consistency,
-outdated information, missing context, accidental disclosure, and unverified
-assumptions.
-
-### Compile
-
-Select and assemble only the context required for a defined state, task, or
-receiving system.
-
-### Prime
-
-Provide the compiled context to a new AI session or model.
-
-### Maintain
-
-Update the Memory Bank when meaningful changes occur.
-
-### Audit
-
-Inspect for semantic drift, contradictory instructions, outdated decisions,
-missing provenance, and important intent reduced to generic language.
-
-### Archive
-
-Move obsolete or historical material to an archive instead of deleting it
-immediately.
+Structure without intent may preserve organization while losing meaning.
 
 ---
 
-## Recommended Metadata
+## Authority and Content Status
 
-Important Memory Bank entries should include metadata.
+Project context must distinguish between different levels of authority.
 
-```yaml
-status: proposed
-confidence: medium
-source: conversation
-last_reviewed: YYYY-MM-DD
-sensitivity: internal
-```
+### Canonical
 
-### Status
+Material confirmed by the human owner or by an explicitly authoritative
+project source.
 
-- `proposed`
-- `active`
-- `confirmed`
-- `deprecated`
-- `archived`
-- `disputed`
+### Inferred
 
-### Confidence
+A reasonable interpretation derived from canonical or source-supported material.
 
-- `low`
-- `medium`
-- `high`
+### Proposed
 
-### Sensitivity
+A suggestion that has not yet been confirmed.
 
-- `public`
-- `internal`
-- `private`
-- `restricted`
+### Unverified
 
-Metadata helps prevent old, uncertain, or private information from being
-treated as permanent and authoritative.
+Material that may be plausible but lacks sufficient confirmation or source
+support.
+
+### Historical
+
+Material that describes an earlier project state.
+
+### Superseded
+
+Material that was previously active but has been replaced by a newer decision,
+version, or project state.
+
+### Rejected
+
+Material that was explicitly rejected and must not be reintroduced as active
+guidance without deliberate review.
+
+AI-generated material must not automatically become canonical project knowledge.
 
 ---
 
-## Authority and Provenance
+## Provenance
 
-A Memory Bank should distinguish between:
+Provenance records where material came from, who authorized it, and what status
+it has.
 
-```text
-Human-confirmed decision
-    ↓
-Source-supported interpretation
-    ↓
-Model-generated proposal
-    ↓
-Unverified assumption
-```
-
-AI-generated content should not automatically become canonical project knowledge.
-
-Important material should preserve, where possible:
+Important project material should preserve, where possible:
 
 - source;
 - author;
@@ -632,6 +510,8 @@ Important material should preserve, where possible:
 - supersession status.
 
 A link is a pointer, not proof that a model has read the linked material.
+
+An AI must not claim to have verified a source that was not actually available.
 
 > Portable context without provenance can become portable fiction.
 
@@ -665,6 +545,95 @@ Safeguards include explicit separation between:
 - unverified assumptions;
 - historical material;
 - rejected material.
+
+---
+
+## Memory Bank Layers
+
+A complete Memory Bank may be organized into six connected layers:
+
+1. **Identity** — who is involved and what relationship defines the work;
+2. **Project Context** — what the project is and is not;
+3. **Structure** — how concepts, documents, and dependencies relate;
+4. **Working Method** — how the AI should participate;
+5. **Intent and Meaning** — why the project exists;
+6. **Continuity and Maintenance** — how context is updated, reviewed, compiled,
+   transferred, and archived.
+
+---
+
+## Building and Maintaining a Memory Bank
+
+The method follows this lifecycle:
+
+```text
+Identify
+   ↓
+Collect
+   ↓
+Classify
+   ↓
+Consolidate
+   ↓
+Validate
+   ↓
+Compile
+   ↓
+Prime
+   ↓
+Maintain
+   ↓
+Audit
+   ↓
+Archive and repeat
+```
+
+### Identify
+
+Determine which information must survive between sessions.
+
+### Collect
+
+Gather relevant information from conversations, documents, decisions, notes,
+repositories, meeting summaries, templates, and architecture models.
+
+### Classify
+
+Organize information by purpose, stability, sensitivity, confidence, source,
+status, and lifecycle.
+
+### Consolidate
+
+Combine related information while preserving distinctions between decisions,
+ideas, historical material, and unresolved questions.
+
+### Validate
+
+Review for accuracy, relevance, consistency, outdated information, missing
+context, accidental disclosure, and unverified assumptions.
+
+### Compile
+
+Select and assemble only the context required for a defined state, task, or
+receiving system.
+
+### Prime
+
+Provide the compiled context to a new AI session or model.
+
+### Maintain
+
+Update the Memory Bank when meaningful changes occur.
+
+### Audit
+
+Inspect for semantic drift, contradictory instructions, outdated decisions,
+missing provenance, and lost intent.
+
+### Archive
+
+Move obsolete or historical material to an archive instead of deleting it
+immediately.
 
 ---
 
@@ -747,11 +716,6 @@ Context included:
 - no separate project-orientation document;
 - no task-specific intent prompt.
 
-Purpose:
-
-> Establish a baseline for whether a Memory Bank alone can provide enough
-> context for another AI model to continue work within the project.
-
 ### Test Run 02 — Memory Bank and Vocabulary
 
 Context included:
@@ -760,11 +724,6 @@ Context included:
 - project vocabulary;
 - the same source idea and question sequence as Test Run 01;
 - no separate task-specific intent prompt.
-
-Purpose:
-
-> Observe whether vocabulary improves terminology, structure, document
-> relationships, repository navigation, and architectural continuity.
 
 ### Test Run 03 — Intent Deep Dive
 
@@ -776,27 +735,9 @@ Context included:
 - task-specific intent instruction;
 - original mobile-surveillance idea.
 
-Purpose:
-
-> Investigate whether a model can move beyond structural and terminological
-> continuity toward human intent and recurring systems thinking.
-
 The deep-dive instruction contained leading analytical categories. The result
 therefore represents guided intent reconstruction, not entirely independent
 discovery.
-
----
-
-## Test Variables
-
-| Test Run | Memory Bank | Vocabulary | Repository Reference | Intent Prompt |
-|---|---:|---:|---:|---:|
-| 01 | Yes | No | No | No |
-| 02 | Yes | Yes | No | No |
-| 03 | Yes | Yes | Yes | Yes |
-
-These tests represent progressive exploration rather than controlled scientific
-experimentation.
 
 ---
 
@@ -835,7 +776,7 @@ history.
 
 - [Synthetic Continuity Test](synthetic-test/README.md)
 - [Synthetic Testing Guide](synthetic-test/TESTING-GUIDE.md)
-- [Core Continuity Concepts](synthetic-test/../README.md)
+- [Core Continuity Concepts](methodology/core-concepts.md)
 
 ---
 
@@ -867,7 +808,7 @@ The goal is meaningful, reviewable continuation.
 
 AI Continuity Architecture Method is:
 
-- a practical method for building and maintaining Memory Banks;
+- a method for building and maintaining Memory Banks;
 - an external context architecture for long-running AI collaboration;
 - a compilation and priming layer for different AI models and platforms;
 - a way to preserve project identity, structure, terminology, and intent;
@@ -972,7 +913,7 @@ and sharing practices must be considered separately.
 AI-Continuity-Architecture-Method/
 ├── README.md
 ├── methodology/
-│   └── memory-bank-method.md
+│   └── core-concepts.md
 ├── principles/
 │   └── context-design-principles.md
 ├── templates/
@@ -998,7 +939,7 @@ AI-Continuity-Architecture-Method/
 
 ### Directory Roles
 
-- `methodology/` — how to build and maintain a Memory Bank;
+- `methodology/` — continuity concepts and method definitions;
 - `principles/` — principles for durable context design;
 - `templates/` — reusable Memory Bank and documentation templates;
 - `proof-of-concept/` — the first documented project case;
@@ -1007,7 +948,7 @@ AI-Continuity-Architecture-Method/
 - `notes/` — emerging ideas and unresolved questions;
 - `source/` — raw model outputs within the relevant test directory;
 - `analysis/` — human-reviewed interpretations;
-- `prompts/` — reusable test and compilation prompts.
+- `prompts/` — reusable test, compilation, and evaluation prompts.
 
 ---
 
@@ -1019,6 +960,7 @@ This repository contains:
 - the beginning of a reusable methodology;
 - principles for context design;
 - Memory Bank and Workstate concepts;
+- context governance principles;
 - early cross-model continuity case studies;
 - a synthetic test fixture;
 - a testing guide;
@@ -1053,6 +995,7 @@ Future work may include:
 
 - a generic Memory Bank template;
 - a formal compilation methodology;
+- context governance rules;
 - quality checklists;
 - short and full priming formats;
 - decision-log structures;
@@ -1073,8 +1016,8 @@ Future work may include:
 ## One-Sentence Summary
 
 > AI Continuity Architecture Method explores how structured external context can
-> preserve project meaning, identity, and working continuity across long-running
-> human–AI projects, sessions, platforms, and model boundaries.
+> preserve project meaning, identity, authority, and working continuity across
+> long-running human–AI projects, sessions, platforms, and model boundaries.
 
 ---
 
@@ -1086,8 +1029,8 @@ guarantees perfect continuity.
 It proposes something more practical:
 
 > Meaningful continuity can be improved when project context is deliberately
-> collected, classified, structured, compiled, maintained, versioned, primed,
-> transferred, and reviewed.
+> collected, classified, structured, governed, compiled, maintained, versioned,
+> primed, transferred, and reviewed.
 
 The Memory Bank preserves more than information.
 
@@ -1096,10 +1039,12 @@ At its best, it preserves:
 - what the project is;
 - how its parts relate;
 - how the work should continue;
-- why the project matters.
+- why the project matters;
+- what the AI is allowed to assume.
 
 Build for continuity.  
-Prime for understanding.  
+Govern context.  
 Compile for purpose.  
+Prime for understanding.  
 Maintain for accuracy.  
 Audit for drift.
