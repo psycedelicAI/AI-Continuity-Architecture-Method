@@ -9,7 +9,7 @@
 
 | Field | Value |
 |---|---|
-| Test ID | `A` |
+| Test ID | `0` |
 | Test name | Human-Compiled Workstate Baseline |
 | Test type | Receiving-AI continuity test |
 | Test stage | Baseline |
