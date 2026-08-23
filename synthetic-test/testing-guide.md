@@ -45,32 +45,33 @@ synthetic-test/
 │   ├── project-aurora-context.md
 │   ├── project-aurora-history.md
 │   └── project-aurora-decisions.md
+├── tests/
+│   └── test-a-human-compiled-workstate-baseline.md
 └── workstates/
     ├── README.md
     └── project-aurora-portable-workstate.md
 ```
 
-The folders have distinct purposes:
+### Directory roles
+
+| Directory | Role |
+|---|---|
+| `source/` | Original Project Aurora source documents |
+| `workstates/` | Human-reviewed Portable Workstates |
+| `prompts/` | Compilation and receiving-AI prompts |
+| `expected/` | Human evaluation criteria |
+| `tests/` | Detailed definitions of individual tests |
+| `results/` | Completed test runs |
+
+The Test A definition currently exists at:
 
 ```text
-source/
-    Original Project Aurora source documents
-
-workstates/
-    Human-reviewed Portable Workstates
-
-prompts/
-    Compilation and receiving-AI prompts
-
-expected/
-    Human evaluation criteria
-
-results/
-    Outputs and analysis from completed test runs
+tests/test-a-human-compiled-workstate-baseline.md
 ```
 
-`source/` must contain only the three source documents. Prompts, evaluation
-criteria, Workstates, and results must remain in their own directories.
+The definitions for Tests B–E may be added when those tests are formally
+prepared. Their procedures are described in this guide even when their
+individual definition files do not yet exist.
 
 ---
 
@@ -93,7 +94,7 @@ Test E
     = Authority Stress Test
 ```
 
-A test category identifies the type of experiment.
+A test category identifies the experiment type.
 
 A run ID identifies one execution of that test.
 
@@ -208,8 +209,10 @@ C-0-lumo-to-chatgpt-compilation-raw.md
 C-0-lumo-to-chatgpt-generated-workstate.md
 C-0-lumo-to-chatgpt-receiving-raw.md
 
-D-0-lumo-portable-workstate-raw.md
 D-0-lumo-full-source-raw.md
+D-0-lumo-portable-workstate-raw.md
+D-0-lumo-simple-context-raw.md
+D-0-lumo-no-context-raw.md
 
 E-0-lumo-receiving-raw.md
 E-0-lumo-evaluation.md
@@ -218,7 +221,7 @@ E-0-lumo-evaluation.md
 Every result filename must identify the test category, run ID, model or model
 pair, and content type.
 
-The result folder number is repository storage. It is not the test ID.
+The result-folder number is repository storage. It is not the test ID.
 
 ---
 
@@ -267,18 +270,14 @@ Receiving AI
 Human evaluation
 ```
 
-## Files supplied to the receiving AI
-
-Provide only:
+## Receiving AI receives
 
 ```text
 workstates/project-aurora-portable-workstate.md
 prompts/evaluation-prompt.md
 ```
 
-## Files withheld from the receiving AI
-
-Do not provide:
+## Receiving AI does not receive
 
 ```text
 source/project-aurora-context.md
@@ -379,7 +378,7 @@ Test B has two separate stages.
 
 ## Stage 1 — Compilation
 
-### Compiling AI receives
+The compiling AI receives:
 
 ```text
 source/project-aurora-context.md
@@ -388,7 +387,7 @@ source/project-aurora-decisions.md
 prompts/compilation-prompt.md
 ```
 
-### Compiling AI does not receive
+The compiling AI does not receive:
 
 ```text
 workstates/project-aurora-portable-workstate.md
@@ -422,7 +421,7 @@ B-0-lumo-generated-workstate.md
 prompts/evaluation-prompt.md
 ```
 
-Do not provide the compiler output, source files, or evaluation criteria.
+Do not provide the compiler output, source files, or Evaluation Criteria.
 
 Save the receiving response as:
 
@@ -533,14 +532,11 @@ Keep constant:
 - Evaluation Prompt;
 - output requirements;
 - session conditions;
-- evaluation criteria.
+- Evaluation Criteria.
 
 Change only the supplied context.
 
-Save every condition in the same result directory, using condition-specific
-filenames.
-
-Example:
+Save each condition with a condition-specific filename:
 
 ```text
 D-0-lumo-full-source-raw.md
@@ -713,7 +709,7 @@ results/0002/
 └── C-0-lumo-to-chatgpt-analysis.md
 ```
 
-### Important result rules
+### Result rules
 
 - Raw files contain exact AI output.
 - Evaluation files contain human scoring.
