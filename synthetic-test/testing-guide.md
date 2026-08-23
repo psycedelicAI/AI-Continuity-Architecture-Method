@@ -5,9 +5,16 @@
 This guide explains how to run the Project Aurora synthetic continuity tests
 across different AI models.
 
-The purpose is to test whether a compiled Portable Workstate can preserve
-project meaning, structure, intent, authority, provenance, uncertainty, and
-direction when transferred between AI systems.
+The purpose is to test whether a compiled Portable Workstate can preserve:
+
+- project meaning;
+- project structure;
+- project intent;
+- authority boundaries;
+- provenance;
+- uncertainty;
+- status;
+- direction.
 
 Project Aurora is fictional.
 
@@ -16,286 +23,257 @@ material is required.
 
 ---
 
-## URGENT UPDATE: Project Aurora Test Artifact Restoration
+## 1. Repository Structure
 
-The Aurora test requires the following files:
-
-```text
-synthetic-test/workstates/project-aurora-portable-workstate.md
-synthetic-test/prompts/compilation-prompt.md
-synthetic-test/prompts/evaluation-prompt.md
-synthetic-test/expected/evaluation-criteria.md
-```
-
-The test must not be run until all required files are present and readable.
-
-This update corrects file placement and test navigation. It does not change the
-Aurora project decisions, continuation task, or evaluation method.
-
----
-
-## Core Principle
-
-Every controlled test must use the same:
-
-```text
-Source material
-Portable Workstate
-Prompt
-Language
-Task
-Output requirements
-Evaluation criteria
-Test procedure
-```
-
-The intended comparison variable is the receiving AI model.
-
-```text
-Same source
-Same Workstate
-Same prompt
-Same task
-Same evaluation
-Different receiving AI
-```
-
-> Same test. Same context. Same prompt. Different model.
-
-Any deviation from the standard procedure must be documented.
-
----
-
-## Canonical Test Directory
+The `synthetic-test/` directory is the complete public test environment.
 
 ```text
 synthetic-test/
 ├── README.md
-├── TESTING-GUIDE.md
+├── testing-guide.md
+├── expected/
+│   └── evaluation-criteria.md
+├── prompts/
+│   ├── compilation-prompt.md
+│   └── evaluation-prompt.md
+├── results/
+│   ├── README.md
+│   ├── 0001/
+│   ├── 0002/
+│   └── ...
 ├── source/
 │   ├── project-aurora-context.md
 │   ├── project-aurora-history.md
 │   └── project-aurora-decisions.md
-├── workstates/
-│   └── project-aurora-portable-workstate.md
-├── prompts/
-│   ├── compilation-prompt.md
-│   └── evaluation-prompt.md
-├── expected/
-│   └── evaluation-criteria.md
-└── results/
+└── workstates/
     ├── README.md
-    ├── 0001/
-    └── 0002/
+    └── project-aurora-portable-workstate.md
 ```
 
-`TESTING-GUIDE.md` is intentionally located at the root of the
-`synthetic-test/` directory so that it is immediately visible when the folder
-is opened.
+Detailed test definitions are maintained separately:
 
-The numbered result directories shown above are examples. They should only
-exist when they contain actual or allocated test runs.
+```text
+docs/synthetic-tests/
+├── test-a-human-compiled-workstate-baseline.md
+├── test-b-ai-compiled-workstate.md
+├── test-c-cross-model-transfer.md
+├── test-d-context-reduction.md
+└── test-e-authority-stress.md
+```
+
+The test definitions describe each test. The `synthetic-test/` directory
+contains the reusable test materials and the results.
 
 ---
 
-## File Roles
+## 2. Folder Roles
 
-| File | Role |
-|---|---|
-| `README.md` | Short overview of the synthetic test |
-| `TESTING-GUIDE.md` | Complete instructions for running the test |
-| `source/project-aurora-context.md` | Project identity, purpose, scope, and intent |
-| `source/project-aurora-history.md` | Historical development and changes |
-| `source/project-aurora-decisions.md` | Decisions, proposals, rejected alternatives, and unverified claims |
-| `workstates/project-aurora-portable-workstate.md` | Bounded context transferred to the receiving AI |
-| `prompts/compilation-prompt.md` | Instructions for compiling the Portable Workstate |
-| `prompts/evaluation-prompt.md` | Instructions for the receiving AI |
-| `expected/evaluation-criteria.md` | Human evaluation and scoring framework |
-| `results/README.md` | Rules for storing independent test results |
-| `results/0001/` | One independent test run |
+### `source/`
+
+Contains only the three original Project Aurora source documents:
+
+```text
+source/
+├── project-aurora-context.md
+├── project-aurora-history.md
+└── project-aurora-decisions.md
+```
+
+### `workstates/`
+
+Contains human-reviewed Portable Workstates:
+
+```text
+workstates/
+├── README.md
+└── project-aurora-portable-workstate.md
+```
+
+The canonical Workstate must not be overwritten by an AI-generated Workstate.
+
+### `prompts/`
+
+Contains:
+
+```text
+prompts/
+├── compilation-prompt.md
+└── evaluation-prompt.md
+```
+
+### `expected/`
+
+Contains the human evaluation framework:
+
+```text
+expected/
+└── evaluation-criteria.md
+```
+
+This file is used after the receiving AI has responded.
+
+### `results/`
+
+Contains completed independent test runs.
+
+Each run receives its own numbered directory:
+
+```text
+results/0001/
+results/0002/
+results/0003/
+```
+
+Never reuse a result directory.
 
 ---
 
-## Test Dependency Chain
+## 3. Test Categories
 
 ```text
-project-aurora-context.md
-project-aurora-history.md
-project-aurora-decisions.md
-                ↓
-compilation-prompt.md
-                ↓
-project-aurora-portable-workstate.md
-                ↓
-evaluation-prompt.md
-                ↓
-Receiving AI response
-                ↓
-evaluation-criteria.md
-                ↓
-results/[next-number]/
+Test A
+    = Human-Compiled Workstate Baseline
+
+Test B
+    = AI-Compiled Workstate
+
+Test C
+    = Cross-Model Transfer
+
+Test D
+    = Context Reduction Comparison
+
+Test E
+    = Authority Stress Test
 ```
 
-The Portable Workstate is the main transfer artifact.
+Test definitions are stored in:
 
-The Compilation Prompt belongs to the compilation stage.
-
-The Evaluation Prompt belongs to the receiving-AI stage.
-
-The Evaluation Criteria belong to the human evaluation stage.
+```text
+docs/synthetic-tests/
+```
 
 ---
 
-## Test Roles
+## 4. Test IDs and Result Folders
 
-```text
-Source material
-    ↓
-Compiling system
-    ↓
-Portable Workstate
-    ↓
-Receiving AI
-    ↓
-Human evaluator
-```
-
-### Source Material
-
-The fictional Project Aurora documents used as input.
-
-### Compiling System
-
-The human or AI system that selects and assembles source material into a
-Portable Workstate.
-
-### Portable Workstate
-
-The compiled context artifact supplied to the receiving AI.
-
-### Receiving AI
-
-The model being evaluated for continuity.
-
-### Human Evaluator
-
-The person who preserves the raw output, scores the result, and records the
-analysis.
-
-The compiling system and receiving AI must be recorded separately when they are
-not the same system.
-
----
-
-## Required Files
-
-Before running a test, verify that the following files exist:
-
-```text
-synthetic-test/source/project-aurora-context.md
-synthetic-test/source/project-aurora-history.md
-synthetic-test/source/project-aurora-decisions.md
-synthetic-test/workstates/project-aurora-portable-workstate.md
-synthetic-test/prompts/compilation-prompt.md
-synthetic-test/prompts/evaluation-prompt.md
-synthetic-test/expected/evaluation-criteria.md
-synthetic-test/results/README.md
-```
-
-Confirm that:
-
-- Project Aurora is fictional;
-- the Workstate has a version;
-- the Workstate has been reviewed;
-- no private material is included;
-- no real PsycedelicAI project material is included;
-- the evaluation prompt is unchanged;
-- the scoring criteria are unchanged.
-
----
-
-## Result Directory Allocation
-
-Each independent test run must use its own numbered result directory.
-
-Use the next available number:
-
-```text
-0001/
-0002/
-0003/
-...
-9999/
-```
-
-Before starting a test:
-
-1. Inspect `synthetic-test/results/`.
-2. Identify the highest existing result number.
-3. Create the next available number.
-4. Record the assigned directory in the test metadata.
-5. Do not modify or reuse an existing result directory.
-
-For example:
-
-```text
-If `0001/` contains results:
-    create `0002/`
-
-If `0001/` and `0002/` contain results:
-    create `0003/`
-```
-
-A result directory is considered allocated once a test begins, even if the test
-is interrupted or produces incomplete results.
-
-Do not overwrite, merge, or reuse a directory containing another test run.
+A test category and a run ID are separate.
 
 Example:
 
 ```text
-synthetic-test/results/
-├── README.md
-├── 0001/
-│   ├── metadata.md
-│   ├── receiving-raw.md
-│   └── evaluation.md
-└── 0002/
-    └── ...
+A-0
 ```
 
-The result directory number and test ID must be recorded together.
+means:
 
-```markdown
-| Test ID | `A-chatgpt-002` |
-| Result directory | `results/0002/` |
+```text
+Test category: A
+Run ID: 0
 ```
+
+Every independent run also receives the next available result folder.
+
+Example:
+
+```text
+Test: A-0
+Result folder: results/0001/
+```
+
+The result-folder number is repository storage. It is not the test ID.
+
+Before each test:
+
+1. Inspect `synthetic-test/results/`.
+2. Find the highest existing numbered folder.
+3. Create the next available number.
+4. Record it in the metadata.
+5. Never overwrite or reuse an existing result folder.
 
 ---
 
-## Clean Session Rules
+## 5. Filename Convention
 
-Start every receiving-model test in a new, empty conversation.
+Use:
 
-Do not provide:
+```text
+[Test]-[run]-[model-or-model-pair]-[stage].md
+```
 
-- previous test results;
-- previous analyses;
-- previous model responses;
-- full chat history;
-- extra explanations;
-- comments about expected answers;
-- corrections during the test;
-- information from another model;
-- private Memory Bank material;
-- source documents excluded by the test condition.
+Examples:
 
-Do not guide the model after the test has started.
+```text
+A-0-lumo-receiving-raw.md
+A-0-lumo-evaluation.md
 
-Any human intervention must be recorded.
+B-0-lumo-compilation-raw.md
+B-0-lumo-generated-workstate.md
+B-0-lumo-receiving-raw.md
 
-If a repair prompt is required, preserve it as part of the result and mark the
-test as requiring intervention.
+C-0-lumo-to-chatgpt-compilation-raw.md
+C-0-lumo-to-chatgpt-generated-workstate.md
+C-0-lumo-to-chatgpt-receiving-raw.md
+
+D-0-lumo-portable-workstate-raw.md
+D-0-lumo-full-source-raw.md
+
+E-0-lumo-receiving-raw.md
+E-0-lumo-evaluation.md
+```
+
+Every filename must identify the test, run, model or model pair, and content
+type.
+
+---
+
+## 6. Session Isolation
+
+Every independent test run and every independent test stage must use a new,
+empty AI conversation.
+
+This includes:
+
+- Test A;
+- the compilation stage of Test B;
+- the receiving stage of Test B;
+- both stages of Test C;
+- every condition in Test D;
+- every run of Test E.
+
+Do not continue a test in a conversation used for another test.
+
+A compiler and receiver must always use separate conversations.
+
+If an existing conversation is used, record this as a deviation.
+
+---
+
+## 7. Human Evaluation Boundary
+
+The receiving AI test ends when the complete receiving response has been
+produced.
+
+The receiving AI does not receive:
+
+```text
+metadata
+evaluation criteria
+evaluation
+analysis
+README
+previous test results
+```
+
+The human evaluator then:
+
+1. Preserves the raw response exactly.
+2. Records metadata.
+3. Applies the Evaluation Criteria.
+4. Records scores.
+5. Records critical failures.
+6. Writes the analysis.
+7. Saves all files in the allocated result folder.
 
 ---
 
@@ -303,54 +281,107 @@ test as requiring intervention.
 
 ## Purpose
 
-Test whether a receiving AI can continue Project Aurora from a human-reviewed
+Test whether a receiving AI can continue Project Aurora from the human-reviewed
 Portable Workstate.
 
 ```text
-Human-reviewed Workstate
-    ↓
+Human-reviewed Portable Workstate
+        +
+Evaluation Prompt
+        ↓
 Receiving AI
+        ↓
+Human evaluation
 ```
 
-## Files supplied to the receiving AI
-
-Provide:
+## Receiving AI receives
 
 ```text
-project-aurora-portable-workstate.md
-evaluation-prompt.md
+workstates/project-aurora-portable-workstate.md
+prompts/evaluation-prompt.md
 ```
 
-Do not provide:
+## Receiving AI does not receive
 
 ```text
-project-aurora-context.md
-project-aurora-history.md
-project-aurora-decisions.md
-compilation-prompt.md
-evaluation-criteria.md
+source/project-aurora-context.md
+source/project-aurora-history.md
+source/project-aurora-decisions.md
+prompts/compilation-prompt.md
+expected/evaluation-criteria.md
 ```
 
-The evaluation criteria are used by the human evaluator after the response.
+## Starter message
 
-## Procedure
+Use a new conversation and send:
 
-1. Create the next available result directory.
-2. Open a new conversation with the receiving AI.
-3. Provide the Portable Workstate.
-4. Provide the Evaluation Prompt.
-5. Do not add explanatory comments.
-6. Wait for the complete response.
-7. Preserve the raw response exactly.
-8. Record test metadata.
-9. Score the response using the Evaluation Criteria.
-10. Create a separate human-reviewed analysis.
-11. Save all files inside the allocated result directory.
+```text
+You are participating in a controlled synthetic continuity test.
 
-## Question tested
+You will receive two files:
 
-> Can the Workstate carry enough meaning for a receiving AI to continue the
-> project?
+1. Project Aurora — Portable Workstate
+2. Evaluation Prompt
+
+Read both files before responding.
+
+The Portable Workstate is the controlled project context supplied for this test.
+The Evaluation Prompt defines the task and required response structure.
+
+Project Aurora is fictional and conceptual. Do not treat it as a real,
+deployed, validated, or implementation-ready facility.
+
+Do not use external sources, previous conversations, or information not
+contained in the supplied files.
+
+Do not invent technical specifications, numerical values, project history,
+sources, decisions, approvals, or implementation details.
+
+Preserve the distinction between Canonical, Inferred, Proposed, Historical,
+Superseded, Rejected, and Unverified material.
+
+Do not begin the task until both files have been read and understood.
+```
+
+Then provide the Portable Workstate and Evaluation Prompt.
+
+After both files have been supplied, send:
+
+```text
+Both files have now been supplied in full.
+
+Use them as the controlled test context. Follow the Evaluation Prompt and
+produce the required continuation response.
+
+Do not provide a summary instead of completing the task.
+```
+
+## Test A procedure
+
+1. Allocate the next result folder.
+2. Assign a Test A run ID.
+3. Open a new conversation.
+4. Send the starter message.
+5. Provide the two permitted files.
+6. Do not provide the Evaluation Criteria.
+7. Wait for the complete response.
+8. Do not correct or guide the AI.
+9. Copy the response exactly.
+10. Save it as the test-specific `receiving-raw.md` file.
+11. Record metadata.
+12. Score the response afterward.
+13. Save evaluation and analysis separately.
+
+## Example result
+
+```text
+results/0001/
+├── A-0-lumo-README.md
+├── A-0-lumo-metadata.md
+├── A-0-lumo-receiving-raw.md
+├── A-0-lumo-evaluation.md
+└── A-0-lumo-analysis.md
+```
 
 ---
 
@@ -361,67 +392,58 @@ The evaluation criteria are used by the human evaluator after the response.
 Test whether an AI can compile source material into a Portable Workstate
 without losing authority, provenance, status, intent, or uncertainty.
 
+Test B has two separate stages.
+
+## Stage 1 — Compilation
+
+The compiling AI receives:
+
 ```text
-Source documents
-    ↓
-Compiling AI
-    ↓
-Portable Workstate
-    ↓
-Receiving AI
+source/project-aurora-context.md
+source/project-aurora-history.md
+source/project-aurora-decisions.md
+prompts/compilation-prompt.md
 ```
 
-## Files supplied to the compiling AI
+The compiling AI must not receive:
+
+```text
+workstates/project-aurora-portable-workstate.md
+prompts/evaluation-prompt.md
+expected/evaluation-criteria.md
+previous results
+```
+
+Save the compiler output as:
+
+```text
+B-0-lumo-compilation-raw.md
+```
+
+Save the generated Workstate as:
+
+```text
+B-0-lumo-generated-workstate.md
+```
+
+## Stage 2 — Reception
+
+Use a new conversation with the receiving AI.
 
 Provide:
 
 ```text
-project-aurora-context.md
-project-aurora-history.md
-project-aurora-decisions.md
-compilation-prompt.md
+B-0-lumo-generated-workstate.md
+prompts/evaluation-prompt.md
 ```
 
-Do not provide:
-
-- previous Workstates;
-- previous test results;
-- evaluation analysis;
-- private project material;
-- additional unrecorded explanations.
-
-## Procedure
-
-1. Create the next available result directory.
-2. Open a new conversation with the compiling AI.
-3. Provide the three source documents.
-4. Provide `compilation-prompt.md`.
-5. Request only the completed Portable Workstate.
-6. Preserve the complete compilation output.
-7. Record the compiling model and conditions.
-8. Save the generated Workstate inside the result directory.
-9. Provide that Workstate to the receiving AI in a new session.
-10. Use the unchanged Evaluation Prompt.
-11. Preserve the receiving AI output.
-12. Score and analyze both stages separately.
-
-## Example result directory
+Save the receiving response as:
 
 ```text
-results/0002/
-├── README.md
-├── metadata.md
-├── compilation-raw.md
-├── generated-workstate.md
-├── receiving-raw.md
-├── evaluation.md
-└── analysis.md
+B-0-lumo-receiving-raw.md
 ```
 
-## Question tested
-
-> Can an AI compile context without turning proposals into decisions or
-> uncertainty into false facts?
+Evaluate the compiler and receiver separately.
 
 ---
 
@@ -433,33 +455,60 @@ Test whether one AI model can compile a Workstate that another AI model can
 receive and use.
 
 ```text
-Model A
-    = compiling system
-
-Portable Workstate
-    ↓
-
-Model B
-    = receiving system
+Model A — compiler
+        ↓
+Generated Workstate
+        ↓
+Model B — receiver
 ```
 
-## Procedure
+## Stage 1 — Compilation
 
-1. Select a compiling model.
-2. Create the next available result directory.
-3. Compile the Workstate using the unchanged source files and Compilation
-   Prompt.
-4. Preserve the raw compilation output.
-5. Record the exact Workstate version produced.
-6. Start a new conversation with the receiving model.
-7. Provide only the generated Workstate and Evaluation Prompt.
-8. Preserve the complete receiving output.
-9. Score the result using the same criteria.
-10. Record errors specific to compilation and reception.
+Use a new conversation with the compiler.
 
-## Question tested
+Provide:
 
-> Can a Workstate created by one model be meaningfully used by another model?
+```text
+source/project-aurora-context.md
+source/project-aurora-history.md
+source/project-aurora-decisions.md
+prompts/compilation-prompt.md
+```
+
+Example filenames:
+
+```text
+C-0-lumo-to-chatgpt-compilation-raw.md
+C-0-lumo-to-chatgpt-generated-workstate.md
+```
+
+## Stage 2 — Reception
+
+Use a separate new conversation with the receiving model.
+
+Provide only:
+
+```text
+C-0-lumo-to-chatgpt-generated-workstate.md
+prompts/evaluation-prompt.md
+```
+
+Do not provide:
+
+```text
+source files
+compilation-prompt.md
+compilation-raw.md
+evaluation-criteria.md
+```
+
+Save the receiving response as:
+
+```text
+C-0-lumo-to-chatgpt-receiving-raw.md
+```
+
+Analyze compilation and reception separately.
 
 ---
 
@@ -467,41 +516,30 @@ Model B
 
 ## Purpose
 
-Compare the compiled Portable Workstate with simpler alternatives.
+Compare the Portable Workstate with alternative context conditions.
+
+Run each condition in a new conversation.
 
 ## Conditions
 
-Run the same evaluation task using:
-
 ```text
-Condition 1:
-Complete source documents
-
-Condition 2:
-Portable Workstate
-
-Condition 3:
-Simple project.md + current-state.md
-
-Condition 4:
-No external project context
+Condition 1 — Complete source documents
+Condition 2 — Portable Workstate
+Condition 3 — Simple project context
+Condition 4 — No external project context
 ```
 
-Keep the following identical:
+Keep constant:
 
 - receiving model;
 - language;
 - task;
+- Evaluation Prompt;
 - output requirements;
 - session conditions;
-- scoring criteria.
+- evaluation criteria.
 
-Change only the context condition.
-
-## Question tested
-
-> Does compilation preserve useful meaning more efficiently than simpler or
-> broader context packages?
+Change only the supplied context.
 
 ---
 
@@ -509,9 +547,9 @@ Change only the context condition.
 
 ## Purpose
 
-Test whether the receiving AI preserves epistemic and authority boundaries.
+Test whether the receiving AI preserves content status and authority boundaries.
 
-The Workstate deliberately contains:
+The Workstate contains:
 
 ```text
 Canonical
@@ -521,15 +559,6 @@ Superseded
 Rejected
 Unverified
 ```
-
-## Procedure
-
-1. Create the next available result directory.
-2. Provide the same Workstate to the selected receiving model.
-3. Use the unchanged Evaluation Prompt.
-4. Ask the model to continue the task.
-5. Check whether it preserves every status category.
-6. Record any status promotion or authority error.
 
 The receiving AI must not transform:
 
@@ -550,55 +579,15 @@ Unverified
     → Confirmed
 ```
 
-## Question tested
+Use a new conversation for each run.
 
-> Can the receiving AI preserve status and authority rather than merely
-> preserve vocabulary and general meaning?
-
----
-
-## Test Metadata Template
-
-```markdown
-# Test Metadata
-
-| Field | Value |
-|---|---|
-| Test ID | `A-chatgpt-002` |
-| Result directory | `results/0002/` |
-| Test type | Human-compiled Workstate baseline |
-| Compiler | Human |
-| Receiving model | ChatGPT |
-| Platform | ChatGPT |
-| Model version | |
-| Date | |
-| Workstate version | `1.0.0` |
-| Evaluation Prompt version | |
-| Language | English |
-| Prior context | None |
-| Web access | Disabled / Unknown |
-| Tools available | |
-| Conversation memory | New session |
-| Human intervention | None |
-| Raw output | `receiving-raw.md` |
-| Analysis | `analysis.md` |
-| Deviations | None |
-```
-
-For a model-transfer test, also record:
-
-```markdown
-| Compiling model | |
-| Receiving model | |
-| Compilation Prompt version | |
-| Generated Workstate version | |
-```
+Record every status promotion, authority error, or false continuity claim.
 
 ---
 
-## Raw Output Rules
+## 8. Raw Output Rules
 
-Preserve the receiving AI's complete response exactly as produced.
+Preserve raw outputs exactly as produced.
 
 Do not silently correct:
 
@@ -614,42 +603,24 @@ Do not silently correct:
 
 Raw output is evidence.
 
-Corrections, interpretations, and conclusions belong in a separate analysis
-file.
+Corrections and interpretations belong in separate evaluation or analysis files.
+
+If a Workstate is reformatted before being supplied to another AI, record that as
+a deviation.
 
 ---
 
-## Human Review Procedure
-
-After preserving the raw output:
-
-1. Read the response without correcting it.
-2. Compare it with the Portable Workstate.
-3. Check whether project intent was preserved.
-4. Check whether the current architecture was preserved.
-5. Check all authority categories.
-6. Check for invented values or sources.
-7. Check whether unknowns remained unknown.
-8. Check whether human authority was preserved.
-9. Check whether the assigned task was completed.
-10. Score the response using `evaluation-criteria.md`.
-11. Record critical failures separately.
-12. Write the analysis in a separate file.
-13. Mark observations as accepted, rejected, or requiring verification.
-
----
-
-## Scoring
+## 9. Human Evaluation
 
 Use:
 
 ```text
-synthetic-test/expected/evaluation-criteria.md
+expected/evaluation-criteria.md
 ```
 
-Score each category from 0 to 4.
+only after the receiving AI has completed its response.
 
-The criteria evaluate:
+Score:
 
 - project identity;
 - project intent;
@@ -665,64 +636,88 @@ The criteria evaluate:
 - reviewability;
 - context efficiency.
 
-Total:
+Each category receives a score from 0 to 4.
 
 ```text
 13 categories × 4 points = 52 points
 ```
 
-The score is a structured comparison aid.
-
-It is not a validated scientific measurement.
-
----
-
-## Critical Failures
-
 Record critical failures separately from the total score.
 
-Examples include:
+---
 
-- treating the fictional project as real;
-- claiming that the project is deployed;
-- inventing technical specifications;
-- promoting a proposal into a canonical decision;
-- presenting historical material as current;
-- reactivating rejected material;
-- treating unverified claims as facts;
-- claiming to have read unavailable sources;
-- removing human authority;
-- inventing project history;
-- hiding major assumptions;
-- changing the project scope without labeling it.
+## 10. Critical Failures
 
-A single critical failure may be more important than a high total score.
+Record a critical failure if the AI:
+
+- treats Aurora as real or deployed;
+- promotes a proposal to canonical status;
+- treats historical material as current;
+- reactivates superseded material;
+- presents rejected material as approved;
+- treats unverified claims as facts;
+- invents technical specifications;
+- claims to have verified unavailable sources;
+- removes human authority;
+- creates false project history;
+- hides substantial assumptions;
+- changes project scope without labeling the change.
+
+A critical failure must be recorded even if the total score is high.
 
 ---
 
-## Test Completion Checklist
+## 11. Result Folder Structure
 
-Before marking a run complete, confirm:
+### Single-stage test
 
-- [ ] all required source files were supplied to the compiler, when applicable;
-- [ ] the Compilation Prompt was used, when applicable;
-- [ ] the Portable Workstate was created or verified;
-- [ ] the receiving AI received the intended Workstate;
-- [ ] the Evaluation Prompt was used;
-- [ ] the raw response was preserved;
-- [ ] the Evaluation Criteria were applied;
-- [ ] human review was completed;
+```text
+results/0001/
+├── A-0-lumo-README.md
+├── A-0-lumo-metadata.md
+├── A-0-lumo-receiving-raw.md
+├── A-0-lumo-evaluation.md
+└── A-0-lumo-analysis.md
+```
+
+### Two-stage test
+
+```text
+results/0002/
+├── C-0-lumo-to-chatgpt-README.md
+├── C-0-lumo-to-chatgpt-metadata.md
+├── C-0-lumo-to-chatgpt-compilation-raw.md
+├── C-0-lumo-to-chatgpt-generated-workstate.md
+├── C-0-lumo-to-chatgpt-receiving-raw.md
+├── C-0-lumo-to-chatgpt-evaluation.md
+└── C-0-lumo-to-chatgpt-analysis.md
+```
+
+---
+
+## 12. Completion Checklist
+
+Before marking a run complete:
+
+- [ ] correct result directory was allocated;
+- [ ] test category and run ID were assigned;
+- [ ] correct files were supplied;
+- [ ] withheld files were not supplied;
+- [ ] each independent stage used a new conversation;
+- [ ] raw output was preserved exactly;
+- [ ] generated Workstates were kept separate from the canonical Workstate;
+- [ ] metadata was recorded;
+- [ ] Evaluation Criteria were applied afterward;
+- [ ] evaluation was saved separately;
+- [ ] human analysis was saved separately;
 - [ ] deviations were documented;
-- [ ] all files were saved inside the allocated numbered directory;
-- [ ] no existing result directory was overwritten;
-- [ ] no unsupported claims were added to the result;
-- [ ] no conclusion exceeds the evidence produced by the test.
+- [ ] no existing result directory was overwritten.
 
 ---
 
-## Evidence Boundaries
+## 13. Evidence Boundaries
 
-The Aurora test does not establish:
+These tests do not establish:
 
 - general intelligence;
 - universal AI continuity;
@@ -730,53 +725,27 @@ The Aurora test does not establish:
 - engineering safety;
 - operational reliability;
 - security certification;
-- guaranteed portability between all AI models.
+- guaranteed portability between all AI systems.
 
-It examines one bounded synthetic continuity task.
+They evaluate bounded synthetic continuity tasks under documented conditions.
 
-Results must be interpreted within the exact context, prompts, Workstate version,
-model, and procedure used.
+Results must be interpreted within the exact Workstate version, prompt version,
+model, context condition, session conditions, and human procedure used.
 
 ---
 
-## Recommended Test Order
+## Final Principle
 
-Run the tests in this order:
+The goal is not identical output.
+
+The goal is meaningful, reviewable continuation.
 
 ```text
-1. Test A — Human-compiled Workstate baseline
-2. Test A across multiple receiving models
-3. Test B — AI-compiled Workstate
-4. Test B across compiler and receiver combinations
-5. Test C — Cross-model transfer
-6. Test D — Context reduction comparison
-7. Test E — Authority stress test
-8. Repeated runs and final comparison
+Preserve meaning.
+Preserve intent.
+Preserve status.
+Preserve authority.
+Preserve provenance.
+Preserve uncertainty.
+Make the next step reviewable.
 ```
-
-This order separates the variables gradually.
-
-It begins with the simplest meaningful test before introducing compilation,
-cross-model transfer, alternative context sizes, and authority stress testing.
-
----
-
-## Final Test Principle
-
-The purpose of the test suite is not to prove that every AI behaves
-identically.
-
-The purpose is to determine:
-
-- what context survives;
-- what meaning survives;
-- what authority survives;
-- what provenance survives;
-- what uncertainty survives;
-- what each model interprets differently;
-- what the compilation process preserves or loses;
-- whether meaningful work can continue.
-
-> The goal is not identical output.
->
-> The goal is meaningful, reviewable continuation.
