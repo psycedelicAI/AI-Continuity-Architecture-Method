@@ -1,36 +1,44 @@
 # AI Continuity Architecture Method
 
-> A practical method for building structured external context systems that
-> preserve project identity, meaning, authority, and working continuity across
-> sessions, platforms, and AI model boundaries.
+> A practical method for designing structured external context systems that
+> preserve project identity, meaning, authority, intent, and working continuity
+> across sessions, platforms, AI models, and human–AI collaboration boundaries.
 
 ---
 
 ## Overview
 
-The **AI Continuity Architecture Method** explores how structured external
-context can support long-running human–AI collaboration.
+The **AI Continuity Architecture Method** explores how long-running human–AI
+projects can preserve and reconstruct meaningful context over time.
 
-When a complex project develops across many conversations and AI sessions,
-important context can become fragmented. This may include:
+When a complex project develops across many conversations, documents, tools, AI
+sessions, and model boundaries, important context can become fragmented.
+
+This may include:
 
 - project identity;
 - purpose and scope;
 - previous decisions;
 - canonical terminology;
-- document relationships;
+- relationships between documents and concepts;
 - current project state;
 - open questions;
 - human intent;
+- working methods;
+- privacy boundaries;
 - the reasoning behind important design choices;
 - the difference between confirmed decisions and AI-generated proposals.
 
-A Memory Bank provides a structured way to preserve and reuse this context.
+A **Memory Bank** provides one practical way to organize this material.
 
-It is not model training or fine-tuning.
+However, the method is not limited to storing information. It also addresses
+how context should be classified, governed, validated, compiled, transferred,
+updated, and reviewed.
 
-It is an external context architecture that can be provided to an AI model
-before or during continued work.
+The method is not model training or fine-tuning.
+
+It is an external context architecture that can be used before or during
+continued work with an AI model.
 
 ---
 
@@ -38,8 +46,8 @@ before or during continued work.
 
 > An AI Continuity Architecture is a structured external context system that
 > preserves the information, relationships, decisions, terminology, authority,
-> and intent required to continue meaningful work across separate AI sessions,
-> platforms, and model boundaries.
+> intent, and project state required to continue meaningful work across separate
+> AI sessions, platforms, models, and human–AI collaboration boundaries.
 
 A Memory Bank is one practical implementation of this architecture.
 
@@ -78,7 +86,10 @@ A new session may not know:
 - which ideas are confirmed;
 - which ideas are speculative;
 - what working style should be followed;
-- what human intention lies behind the work.
+- what human intention lies behind the work;
+- which information is current;
+- what should remain private;
+- what has already been rejected or superseded.
 
 Without a structured continuity layer, each new session may require:
 
@@ -87,7 +98,9 @@ Without a structured continuity layer, each new session may require:
 - correction of misunderstandings;
 - re-establishment of terminology;
 - recovery of the project's wider direction;
-- rebuilding relationships between separate documents.
+- rebuilding relationships between separate documents;
+- separation of fact from interpretation;
+- re-evaluation of information that was already reviewed.
 
 This creates friction and can gradually weaken project continuity.
 
@@ -107,7 +120,9 @@ It is a structured and maintained context system that helps an AI understand:
 - what decisions have already been made;
 - how the project is organized;
 - how future work should continue;
-- which uncertainties and contradictions remain unresolved.
+- which uncertainties and contradictions remain unresolved;
+- which information has authority;
+- which material is historical, proposed, or unverified.
 
 The goal is not maximum memory.
 
@@ -119,10 +134,348 @@ The goal is useful continuity.
 
 ---
 
+## Relationship to Existing AI Memory Approaches
+
+The AI Continuity Architecture Method is informed by existing approaches to AI
+memory, context management, information retrieval, and model adaptation.
+
+These approaches may include:
+
+### Retrieval-Augmented Generation
+
+**Retrieval-Augmented Generation (RAG)** retrieves relevant external information
+and provides it to a model during generation.
+
+RAG can improve access to documents and knowledge that may not fit inside a
+model's internal knowledge or immediate context window.
+
+RAG primarily addresses questions such as:
+
+- Which documents are relevant?
+- Which passages should be retrieved?
+- What information should be placed into the current prompt?
+
+RAG does not automatically establish:
+
+- whether retrieved information is current;
+- whether a passage is authoritative;
+- whether it represents a decision or a proposal;
+- how it relates to the current project state;
+- whether it should be transferred to another model;
+- whether it contains obsolete or private material.
+
+### Embeddings and Semantic Search
+
+Embeddings represent text or other data as numerical vectors so that semantically
+similar material can be found.
+
+Semantic search can help locate related information even when exact words differ.
+
+It does not by itself preserve:
+
+- authority;
+- chronology;
+- human intent;
+- decision status;
+- privacy boundaries;
+- source reliability;
+- supersession;
+- project-level meaning.
+
+Semantic similarity is not the same as truth, relevance, or authority.
+
+### Vector Databases
+
+Vector databases store embeddings and support similarity-based retrieval.
+
+They may provide useful infrastructure for:
+
+- document retrieval;
+- semantic search;
+- chunk storage;
+- metadata filtering;
+- large-scale context access.
+
+A vector database is primarily a storage and retrieval component. It does not
+automatically determine:
+
+- what should be remembered;
+- what should be forgotten;
+- what should be considered canonical;
+- which version is active;
+- whether two similar documents contradict one another;
+- whether retrieved information is appropriate for the current task.
+
+### Conversation History
+
+Conversation history preserves previous messages, transcripts, or chat sessions.
+
+It can provide valuable context, but raw history may contain:
+
+- temporary thoughts;
+- repeated material;
+- obsolete assumptions;
+- unverified claims;
+- abandoned ideas;
+- contradictions;
+- sensitive information;
+- context that is irrelevant to the current task.
+
+History preserves what was said. It does not automatically explain what remains
+valid.
+
+### Summarization
+
+Summarization compresses longer material into a shorter representation.
+
+It can reduce context size and make large bodies of information easier to use.
+
+However, summarization may lose:
+
+- qualifications;
+- uncertainty;
+- provenance;
+- chronology;
+- distinctions between fact and proposal;
+- the reason behind a decision;
+- relationships between separate concepts;
+- information that appears minor but later becomes important.
+
+A summary is a representation of context, not necessarily a complete continuity
+record.
+
+### Long-Term and Short-Term Memory Systems
+
+AI systems may distinguish between:
+
+- short-term or working memory;
+- long-term memory;
+- session memory;
+- user memory;
+- project memory;
+- episodic memory;
+- semantic memory;
+- procedural memory.
+
+These distinctions can be useful for organizing information according to
+duration, function, or retrieval conditions.
+
+The AI Continuity Architecture Method is compatible with these distinctions, but
+focuses on how the different forms of context are governed and combined.
+
+### Episodic Memory
+
+Episodic memory records events, experiences, conversations, or specific moments.
+
+In a project context, it may preserve:
+
+- what happened;
+- when it happened;
+- who participated;
+- what was discussed;
+- which decision followed.
+
+Episodic records are valuable, but an event record does not automatically
+become an active project instruction.
+
+### Semantic Memory
+
+Semantic memory stores general concepts, facts, definitions, terminology, and
+relationships.
+
+It can preserve the meaning of project terms and conceptual knowledge.
+
+However, semantic information may become outdated or may be interpreted outside
+the project state in which it was created.
+
+### Procedural Memory
+
+Procedural memory describes how something should be done.
+
+It may include:
+
+- workflows;
+- operating procedures;
+- writing rules;
+- maintenance processes;
+- evaluation methods;
+- project-specific instructions.
+
+Procedures still require status, authority, scope, versioning, and review.
+
+### Knowledge Graphs
+
+Knowledge graphs represent entities and relationships between them.
+
+They can help preserve:
+
+- conceptual relationships;
+- dependencies;
+- ownership;
+- categories;
+- sequences;
+- references;
+- project structure.
+
+A graph can show that two concepts are related, but it does not automatically
+determine whether the relationship is current, intentional, verified, or
+authorized.
+
+### Structured Notes and External Knowledge Bases
+
+Markdown files, wikis, databases, document repositories, and structured notes can
+provide durable external context.
+
+Their usefulness depends on:
+
+- information structure;
+- maintenance;
+- source tracking;
+- access control;
+- review;
+- versioning;
+- clear separation between current and historical material.
+
+A repository can contain continuity material without itself guaranteeing
+continuity.
+
+### Model-Specific Memory Features
+
+Some AI systems provide built-in memory, personalization, or project-context
+features.
+
+These may be useful, but they are usually dependent on:
+
+- a particular provider;
+- a particular platform;
+- a particular model;
+- provider-specific storage and retrieval behaviour;
+- platform-specific privacy and retention policies.
+
+An external continuity architecture can provide a more portable and inspectable
+representation that is not dependent on one model or provider.
+
+### Fine-Tuning and Model Adaptation
+
+Fine-tuning and other adaptation methods modify model behaviour or model
+parameters.
+
+They may be useful when a model needs to learn patterns, formats, or domain
+behaviour.
+
+They are not the same as preserving the current state, decisions, history, and
+intent of a changing project.
+
+A Memory Bank can be updated without retraining a model.
+
+---
+
+## How This Method Differs
+
+The AI Continuity Architecture Method does not claim to replace RAG, embeddings,
+vector databases, knowledge graphs, summaries, conversation history, or
+model-specific memory.
+
+It addresses a broader architectural problem.
+
+```text
+Memory and retrieval techniques
+        ↓
+Storage, indexing, search, and recall
+        ↓
+AI Continuity Architecture
+        ↓
+Context, provenance, authority, state, intent,
+transfer, maintenance, and review
+```
+
+The difference is not necessarily a new storage mechanism.
+
+The difference is the deliberate coordination of:
+
+- information;
+- structure;
+- intent;
+- project state;
+- provenance;
+- authority;
+- uncertainty;
+- privacy;
+- versioning;
+- compilation;
+- transfer;
+- maintenance;
+- human review.
+
+Existing memory techniques often answer:
+
+> “What information may be relevant?”
+
+Continuity architecture also asks:
+
+> “What does this information mean within the project, what status does it have,
+> where did it come from, should it influence the current work, and can it be
+> safely transferred?”
+
+This method can therefore be implemented using existing technologies.
+
+A Memory Bank may be stored as Markdown, a database, a knowledge graph, a
+repository, or another structured external system.
+
+The architecture is defined by the organization and governance of context, not by
+one specific storage technology.
+
+---
+
+## Memory Is Not the Same as Continuity
+
+Memory may preserve or retrieve information.
+
+Continuity requires the preservation and reconstruction of meaningful project
+state.
+
+This may include:
+
+- project identity;
+- purpose and scope;
+- human intent;
+- canonical terminology;
+- confirmed decisions;
+- unresolved questions;
+- current project state;
+- relationships between concepts;
+- provenance and source information;
+- authority and responsibility;
+- known limitations;
+- privacy boundaries;
+- historical development;
+- the distinction between fact, interpretation, proposal, and uncertainty.
+
+A retrieved fragment may be relevant without being authoritative.
+
+A previous statement may have been accurate in one project state but outdated in
+another. A summary may preserve the general topic while losing qualifications,
+relationships, uncertainty, or the reason a decision was made.
+
+For this reason, continuity requires more than retrieval.
+
+It requires an active process of classification, validation, consolidation,
+versioning, compilation, transfer, maintenance, and review.
+
+> Retrieval asks:
+>
+> “What information may be relevant?”
+>
+> Continuity also asks:
+>
+> “What does this information mean, how trustworthy is it, where does it belong,
+> and should it influence the current work?”
+
+---
+
 ## Context Governance
 
-The method treats context as something that must be governed, not merely
-stored.
+The method treats context as something that must be governed, not merely stored.
 
 Traditional AI guardrails often focus on model behaviour:
 
@@ -225,8 +578,8 @@ Compilation may include:
 
 ## Current State
 
-A Current State is a compiled representation of the active and
-change-sensitive condition of a project.
+A Current State is a compiled representation of the active and change-sensitive
+condition of a project.
 
 It may include:
 
@@ -238,6 +591,11 @@ It may include:
 - pending validation;
 - next intended actions.
 
+A Current State should be updated as the active project condition changes.
+
+It does not replace historical records, the wider Memory Bank, or a Portable
+Workstate.
+
 ```text
 Memory Bank
     ↓
@@ -248,11 +606,6 @@ Next actions
     ↓
 Current State
 ```
-
-A Current State should be updated as the active project condition changes.
-
-It does not replace historical records, the wider Memory Bank, or a
-Portable Workstate.
 
 ---
 
@@ -813,6 +1166,7 @@ AI Continuity Architecture Method is:
 - a compilation and priming layer for different AI models and platforms;
 - a way to preserve project identity, structure, terminology, and intent;
 - a framework for transferring context across session and model boundaries;
+- a context-governance approach for authority, provenance, status, and privacy;
 - an evolving method supported by documented experiments.
 
 ---
@@ -821,6 +1175,12 @@ AI Continuity Architecture Method is:
 
 It is not:
 
+- a replacement for RAG;
+- a replacement for embeddings or vector databases;
+- a replacement for knowledge graphs;
+- a replacement for conversation history;
+- a replacement for summarization;
+- a claim to have invented AI memory;
 - model training;
 - fine-tuning;
 - permanent internal AI memory;
@@ -831,8 +1191,12 @@ It is not:
 - an implementation-ready architecture by itself;
 - independently validated universal proof.
 
-A Memory Bank is an external context resource. It must be provided, loaded,
-read, retrieved, or integrated into the AI workflow.
+A Memory Bank is an external context resource.
+
+It must be provided, loaded, read, retrieved, or integrated into the AI workflow.
+
+The method may use existing memory technologies as implementation components, but
+its focus is the architecture and governance of continuity across them.
 
 ---
 
@@ -855,7 +1219,8 @@ The method favours:
 - explicit uncertainty;
 - reversible decisions where possible;
 - preservation of provenance;
-- cross-model comparison using the same test conditions.
+- cross-model comparison using the same test conditions;
+- portability across models, platforms, and providers.
 
 ---
 
@@ -1016,8 +1381,9 @@ Future work may include:
 ## One-Sentence Summary
 
 > AI Continuity Architecture Method explores how structured external context can
-> preserve project meaning, identity, authority, and working continuity across
-> long-running human–AI projects, sessions, platforms, and model boundaries.
+> preserve project meaning, identity, authority, intent, and working continuity
+> across long-running human–AI projects, sessions, platforms, and model
+> boundaries.
 
 ---
 
@@ -1025,6 +1391,8 @@ Future work may include:
 
 The project does not claim that a Memory Bank creates permanent AI memory or
 guarantees perfect continuity.
+
+It does not claim to replace established memory or retrieval techniques.
 
 It proposes something more practical:
 
@@ -1040,7 +1408,10 @@ At its best, it preserves:
 - how its parts relate;
 - how the work should continue;
 - why the project matters;
-- what the AI is allowed to assume.
+- what the AI is allowed to assume;
+- which information has authority;
+- what should remain uncertain;
+- what must be reviewed by a human.
 
 Build for continuity.  
 Govern context.  
