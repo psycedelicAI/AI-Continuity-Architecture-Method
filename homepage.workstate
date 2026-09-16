@@ -1,0 +1,485 @@
+workstate:
+  id: psycedelicai-homepage-development
+  version: "1.0.0"
+  status: active
+  type: public-website-development-workstate
+  created: "2026-09-16"
+  language:
+    conversation: Swedish
+    website: English
+  human_owner: Psycedelic
+  human_name: Kalle Pettersson
+  project_identity: PsycedelicAI
+  public_url: "https://psycedelicai.neocities.org/"
+
+  purpose: >
+    Preserve the current development state of the PsycedelicAI public homepage,
+    including its structure, content direction, project organisation, SEO work,
+    and remaining tasks.
+
+  core_status:
+    homepage_core: complete
+    visual_identity: complete
+    root_navigation: established
+    project_navigation: established
+    project_pages: created
+    resume_page: created
+    contact_page: created
+    public_email_contact: active
+    onionshare_contact: retained_as_optional
+    seo_work: in_progress
+    final_live_upload: pending
+
+  design_direction:
+    identity:
+      primary_name: PsycedelicAI
+      human_identity: Psycedelic
+      professional_identity:
+        - IT Technician
+        - System Administrator
+        - IT Infrastructure
+        - Systems Thinker
+        - Concept Designer
+
+    visual_style:
+      theme: dark futuristic professional
+      background: dark navy with purple and teal gradients
+      accent_colors:
+        purple: "#a371f7"
+        light_purple: "#bc8cff"
+        teal: "#39d0c8"
+        green: "#56d364"
+      style_keywords:
+        - professional
+        - experimental
+        - human_ai_collaboration
+        - systems_thinking
+        - livedemo_flavor
+        - public_workstate
+        - readable
+        - connected
+      interaction:
+        - clickable project cards
+        - hover states
+        - responsive layouts
+        - visible project status
+        - no unwanted link underlines
+
+  website_structure:
+    root_files:
+      - [index.html](https://index.html)
+      - [home.html](https://home.html)
+      - [about.html](https://about.html)
+      - [resume.html](https://resume.html)
+      - [contact.html](https://contact.html)
+      - [other.html](https://other.html)
+      - [robots.txt](https://robots.txt)
+
+    core_directory:
+      path: core/
+      subdirectories:
+        css:
+          files:
+            - [style.css](https://style.css)
+        java:
+          purpose: future JavaScript files
+        json:
+          purpose: future structured data files
+        assets:
+          purpose: images, icons, and other static assets
+
+    projects_directory:
+      path: projects/
+      files:
+        - [index.html](https://index.html)
+        - [ai-continuity.html](https://ai-continuity.html)
+        - [symbiosis.html](https://symbiosis.html)
+        - [architecture.html](https://architecture.html)
+        - [security.html](https://security.html)
+        - [experiments.html](https://experiments.html)
+        - [documentation.html](https://documentation.html)
+        - [skolai.html](https://skolai.html)
+        - [digital-voting.html](https://digital-voting.html)
+        - [knowledge-architecture.html](https://knowledge-architecture.html)
+
+  navigation:
+    root_pages:
+      home: "home.html"
+      about: "about.html"
+      resume: "resume.html"
+      projects: "projects/index.html"
+      contact: "contact.html"
+      other: "other.html"
+
+    root_navigation_label:
+      - Home
+      - About
+      - Resume
+      - Projects
+      - Contact
+      - Other
+
+    project_page_navigation:
+      home: "../home.html"
+      about: "../about.html"
+      resume: "../resume.html"
+      projects: "index.html"
+      contact: "../contact.html"
+      other: "../other.html"
+
+  homepage:
+    index:
+      purpose: public_entry_point
+      title: "PsycedelicAI"
+      subtitle: "Human perspective. AI perspective. Shared development."
+      role: >
+        Introduces PsycedelicAI as a public workstate and directs visitors
+        toward the homepage, resume, projects, contact page, and other links.
+      seo:
+        canonical: "https://psycedelicai.neocities.org/"
+        focus:
+          - PsycedelicAI
+          - Kalle Pettersson
+          - human_ai_collaboration
+          - systems_thinking
+          - AI_continuity
+          - security_architecture
+          - technical_documentation
+
+    home:
+      purpose: main_public_homepage
+      title: "Ideas becoming systems."
+      content:
+        - What PsycedelicAI is
+        - Professional work
+        - AI continuity
+        - Symbiosis
+        - Architecture
+        - Security concepts
+        - Experiments
+        - Documentation
+        - SkolAI
+        - Digital voting
+        - Knowledge architecture
+        - Current workstate
+        - Contact call_to_action
+      livedemo_flavor:
+        - live_workstate
+        - active_status
+        - continuity_status
+        - experimental_status
+        - human_first_language
+      project_links:
+        ai_continuity: "projects/ai-continuity.html"
+        symbiosis: "projects/symbiosis.html"
+        architecture: "projects/architecture.html"
+        security: "projects/security.html"
+        experiments: "projects/experiments.html"
+        documentation: "projects/documentation.html"
+        skolai: "projects/skolai.html"
+        digital_voting: "projects/digital-voting.html"
+        knowledge_architecture: "projects/knowledge-architecture.html"
+
+  about_page:
+    purpose: >
+      Explain the person, professional background, human perspective, public
+      ecosystem, and relationship between Psycedelic and AI.
+    seo:
+      canonical: "https://psycedelicai.neocities.org/about.html"
+      focus:
+        - Kalle Pettersson
+        - Psycedelic
+        - IT Technician
+        - Systems Thinker
+        - Concept Designer
+        - human_ai_collaboration
+    structured_data:
+      type: Person
+      name: Kalle Pettersson
+      alternate_name: Psycedelic
+      same_as:
+        - "https://github.com/psycedelicAI"
+
+  resume_page:
+    purpose: public_professional_presentation
+    person: Kalle Pettersson
+    focus:
+      - IT support
+      - system administration
+      - IT infrastructure
+      - Microsoft 365
+      - Microsoft Intune
+      - Microsoft Entra ID
+      - Active Directory
+      - endpoint management
+      - identity and access management
+      - backup and recovery
+      - AI continuity
+      - security architecture
+      - technical documentation
+      - knowledge architecture
+      - human_ai_collaboration
+    preserved_content:
+      - professional summary
+      - complete employment history
+      - JM Bygg
+      - Presto
+      - Toshiba
+      - Swedbank
+      - H&M
+      - AGA Gas
+      - Ericsson
+      - Smedex
+      - Bränninge Bil och Lastvagnsservice
+      - voluntary IT Manager experience
+      - education and training
+      - CPR training
+      - PowerShell and automation
+      - working style
+      - professional direction
+      - public work
+      - languages
+      - core values
+    core_values:
+      - professionalism
+      - respect
+      - perseverance
+      - integrity
+    original_cv:
+      url: "https://drive.proton.me/urls/W5WCM9F328#lzqQKQsjJMR2"
+
+  contact_page:
+    purpose: public_contact
+    primary_method:
+      type: email
+      address: "[psycedelic.ai@guardkc35m.8shield.net](mailto:psycedelic.ai@guardkc35m.8shield.net)"
+    secondary_method:
+      type: onionshare_receive_files
+      url: "http://ln5nhajofhqvyeo7sjntwbfiwvbythmjvocxp2hec7btty5v57yrxaqd.onion"
+    contact_strategy:
+      primary: normal_email
+      optional_private_method: onionshare
+    note: >
+      OnionShare remains available as an optional Tor-based contact method,
+      while email is the normal public contact route.
+
+  projects_page:
+    purpose: project_ecosystem_entry_point
+    url: "https://psycedelicai.neocities.org/projects/"
+    categories:
+      professional_work:
+        - AI Continuity Architecture Method
+        - High-Security Facility Concept
+        - Knowledge Architecture
+        - GitHub Onboarding System
+      independent_concepts:
+        - SkolAI
+        - Digital Voting with BankID
+      human_ai_collaboration:
+        - Symbiosis
+        - Livedemo and working methods
+      experiments_and_archive:
+        - Experiments
+        - Documentation
+        - Random-Stuffs
+        - Psycedelic Archives
+
+  project_pages:
+    ai_continuity:
+      status: methodological_experimental_public
+      focus:
+        - context preservation
+        - Memory Bank
+        - Portable Workstate
+        - context reconstruction
+        - human authority
+        - AI continuity
+
+    symbiosis:
+      status: conceptual_methodological_public
+      focus:
+        - human_ai_collaboration
+        - human meaning
+        - AI analysis
+        - shared development
+        - responsibility
+        - boundaries
+
+    architecture:
+      status: conceptual_architectural_experimental
+      focus:
+        - systems architecture
+        - authority
+        - permissions
+        - boundaries
+        - recovery
+        - governance
+        - human oversight
+
+    security:
+      status: conceptual_experimental_public
+      focus:
+        - protected environments
+        - controlled access
+        - least privilege
+        - security zones
+        - oversight
+        - recovery
+        - resilience
+
+    experiments:
+      status: experimental_open_ended
+      focus:
+        - prototypes
+        - AI tests
+        - prompts
+        - creative projects
+        - unfinished ideas
+        - Random-Stuffs
+        - archives
+
+    documentation:
+      status: active_maintained_public
+      focus:
+        - onboarding
+        - project maps
+        - shared vocabulary
+        - project status
+        - public technical communication
+        - knowledge organisation
+
+    knowledge_architecture:
+      status: active_maintained_public
+      focus:
+        - repository organisation
+        - project relationships
+        - documentation structure
+        - public_private boundaries
+        - onboarding
+        - status models
+
+    skolai:
+      status: conceptual_proposed_not_validated
+      focus:
+        - AI in education
+        - AI thinking partner
+        - student agency
+        - teacher control
+        - privacy by design
+        - project workstate
+        - temporary local continuity
+      principle: >
+        AI should not think for children. AI should help children think further.
+      source: "https://github.com/psycedelicAI/wiki/tree/main/SkolAI"
+
+    digital_voting:
+      status: conceptual_proposed_experimental_not_validated
+      focus:
+        - BankID eligibility verification
+        - identity separation
+        - anonymous QR tokens
+        - polling station tablets
+        - ballot secrecy
+        - fallback procedures
+        - accessibility
+        - digital election architecture
+      central_principle: >
+        BankID may verify voting eligibility, but must never be connectable to
+        the vote itself.
+      source: "https://github.com/psycedelicAI/wiki/blob/main/Digitalt-Valsystem-BankID.md"
+
+  github_ecosystem:
+    organisation: "https://github.com/psycedelicAI"
+    repositories_and_areas:
+      - name: psycedelicAI
+        role: organisation_entry_point_and_onboarding
+      - name: wiki
+        role: central_documentation_and_knowledge_architecture
+      - name: AI-Continuity-Architecture-Method
+        role: continuity_methodology
+      - name: high-security-facility-concept
+        role: trust_and_security_architecture
+      - name: Symbiosis
+        role: human_ai_collaboration_and_philosophical_work
+      - name: Random-Stuffs
+        role: experiments_archive_and_older_material
+    documentation_layers:
+      - [Project-Map.md](https://Project-Map.md)
+      - [Project-Status.md](https://Project-Status.md)
+      - [Glossary.md](https://Glossary.md)
+      - [Core-Values.md](https://Core-Values.md)
+      - [Public-and-Private-Work.md](https://Public-and-Private-Work.md)
+      - [Resume.md](https://Resume.md)
+      - [onboarding/start-here.md](https://start-here.md)
+      - [onboarding/start-here.prompt](https://start-here.prompt)
+      - [Livedemo.md](https://Livedemo.md)
+
+  seo:
+    completed:
+      - [index.html](https://index.html)
+      - [home.html](https://home.html)
+      - [about.html](https://about.html)
+      - [resume.html](https://resume.html)
+      - [projects/index.html](https://index.html)
+      - [projects/ai-continuity.html](https://ai-continuity.html)
+      - [projects/symbiosis.html](https://symbiosis.html)
+      - [projects/architecture.html](https://architecture.html)
+      - [projects/security.html](https://security.html)
+      - [projects/experiments.html](https://experiments.html)
+      - [projects/documentation.html](https://documentation.html)
+      - [projects/skolai.html](https://skolai.html)
+      - [projects/digital-voting.html](https://digital-voting.html)
+      - [projects/knowledge-architecture.html](https://knowledge-architecture.html)
+    seo_elements:
+      - unique_titles
+      - meta_descriptions
+      - author_metadata
+      - canonical_links
+      - Open_Graph_metadata
+      - root_relative_stylesheet_paths
+      - project_relative_stylesheet_paths
+    remaining_seo_tasks:
+      - [add_or_update_sitemap.xml](https://add_or_update_sitemap.xml)
+      - [add_sitemap_reference_to_robots.txt](https://add_sitemap_reference_to_robots.txt)
+      - verify_all_navigation_links
+      - verify_all_project_urls
+      - optionally_add_JSON_LD_to_resume
+      - optionally_add_project_schema
+      - test_mobile_layout
+      - test_social_previews
+      - upload_final_structure_to_Neocities
+
+  robots:
+    file: [robots.txt](https://robots.txt)
+    current_policy:
+      normal_search_engines: allowed
+      listed_ai_crawlers: disallowed
+    required_addition:
+      - "Sitemap: [https://psycedelicai.neocities.org/sitemap.xml](https://psycedelicai.neocities.org/sitemap.xml)"
+
+  hosting:
+    provider: Neocities
+    public_url: "https://psycedelicai.neocities.org/"
+    local_preview: "file:///home/psycedelic/Documents/Homepage/"
+    upload_status: pending_final_structure
+    required_uploads:
+      - root_HTML_files
+      - core_directory
+      - projects_directory
+      - [robots.txt](https://robots.txt)
+      - [sitemap.xml](https://sitemap.xml)
+
+  file_paths:
+    root_css_path: "core/css/style.css"
+    project_css_path: "../core/css/style.css"
+    root_project_link: "projects/index.html"
+    project_index_link_from_project_page: "index.html"
+    project_to_root_link: "../home.html"
+    javascript_root_path: "core/java/script.js"
+    javascript_project_path: "../core/java/script.js"
+    json_root_path: "core/json/data.json"
+    json_project_path: "../core/json/data.json"
+
+  current_task:
+    name: homepage_and_public_ecosystem
+    phase: SEO_and_final
