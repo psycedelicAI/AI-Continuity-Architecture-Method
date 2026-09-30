@@ -466,4 +466,3 @@ These definitions were reconstructed from earlier PsycedelicAI conversations:
 This document summarizes those recorded definitions. It does not guarantee
 that a future AI session has access to the cited chats, files, website or
 repositories. When context matters, the AI should retrieve and verify it.
-```
